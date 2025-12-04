@@ -46,10 +46,14 @@ export function Header() {
           </ul>
 
           <div className="flex items-center gap-3">
-            <Button variant="secondary" size="sm">
-              Contact
-            </Button>
-            <Button size="sm">Book a Demo</Button>
+            <Link href="/contact">
+              <Button variant="secondary" size="sm">
+                Contact
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button size="sm">Book a Demo</Button>
+            </Link>
           </div>
         </div>
 
@@ -99,10 +103,14 @@ export function Header() {
             ))}
           </ul>
           <div className="flex flex-col gap-2 pt-4 border-t border-border">
-            <Button variant="secondary" className="w-full">
-              Contact
-            </Button>
-            <Button className="w-full">Book a Demo</Button>
+            <Link href="/contact">
+              <Button variant="secondary" className="w-full">
+                Contact
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button className="w-full">Book a Demo</Button>
+            </Link>
           </div>
         </div>
       </motion.div>

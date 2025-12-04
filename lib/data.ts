@@ -1,12 +1,11 @@
 import { Zap, Shield, Target, Clock, TrendingUp, Users } from "lucide-react";
 
 export const navItems = [
-  { label: "Solutions", href: "#solutions" },
-  { label: "Products", href: "#products" },
-  { label: "Industries", href: "#industries" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Support", href: "#support" },
-  { label: "Contact", href: "#contact" },
+  { label: "Products", href: "/products" },
+  { label: "Industries", href: "/industries" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Support", href: "/support" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const benefits = [
