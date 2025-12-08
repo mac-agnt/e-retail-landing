@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Quote, TrendingUp, Clock, Shield, ArrowRight } from "lucide-react";
@@ -223,13 +224,17 @@ export default function CaseStudiesPage() {
             Join 500+ Irish businesses that have transformed their cash operations with e-Retail.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="glow-accent">
-              Book a Demo
-            </Button>
-            <Button variant="secondary" size="lg">
-              View All Products
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="glow-accent">
+                Book a Demo
+              </Button>
+            </Link>
+            <Link href="/products">
+              <Button variant="secondary" size="lg">
+                View All Products
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </Section>

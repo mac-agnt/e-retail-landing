@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Check, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Check } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Section, SectionHeader } from "@/components/section";
@@ -204,15 +205,6 @@ export default function ProductsPage() {
                   </ul>
                 </div>
 
-                <div className="flex gap-4">
-                  <Button size="lg" className="glow-accent">
-                    Request Quote
-                  </Button>
-                  <Button variant="secondary" size="lg">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
               </div>
             </motion.div>
           ))}
@@ -228,9 +220,11 @@ export default function ProductsPage() {
           <p className="text-muted mb-8">
             Our team can help you find the perfect cash management solution for your business needs and budget.
           </p>
-          <Button size="lg" className="glow-accent">
-            Book a Consultation
-          </Button>
+          <Link href="/contact">
+            <Button size="lg" className="glow-accent">
+              Book a Consultation
+            </Button>
+          </Link>
         </div>
       </Section>
 

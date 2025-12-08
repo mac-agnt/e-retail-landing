@@ -24,14 +24,14 @@ const config: Config = {
         body: ["var(--font-inter)", "sans-serif"],
       },
       boxShadow: {
-        "accent-glow": "0 0 20px rgba(var(--accent-glow), 0.25)",
-        "accent-ring": "0 0 0 2px rgba(var(--accent-glow), 0.15)",
-        panel: "0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)",
-        "panel-hover": "0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
+        "accent-glow": "0 0 20px rgba(var(--accent-glow), 0.15)",
+        "accent-ring": "0 0 0 2px rgba(var(--accent-glow), 0.1)",
+        panel: "0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(220, 38, 38, 0.03)",
+        "panel-hover": "0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(220, 38, 38, 0.05)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, rgba(228, 66, 66, 0.1) 0%, transparent 50%)",
+        "hero-gradient": "linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, transparent 50%)",
       },
       animation: {
         "float": "float 6s ease-in-out infinite",

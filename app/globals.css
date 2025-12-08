@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0E1217;
-  --panel: #12171F;
-  --panel-2: #1A202B;
-  --border: #262D3A;
-  --text: #E7ECF4;
-  --muted: #A8B1C4;
-  --accent: #E44242;
-  --accent-700: #C73434;
-  --accent-glow: 228 66 66;
+  --bg: #FFFFFF;
+  --panel: #FAFAFA;
+  --panel-2: #F5F5F5;
+  --border: #E8E8E8;
+  --text: #1A1A1A;
+  --muted: #6B6B6B;
+  --accent: #DC2626;
+  --accent-700: #B91C1C;
+  --accent-glow: 220 38 38;
 }
 
 @layer base {
@@ -50,7 +50,7 @@
     @apply absolute inset-0 pointer-events-none;
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.06) 0%,
+      rgba(220, 38, 38, 0.02) 0%,
       transparent 50%
     );
   }
@@ -69,10 +69,10 @@
   /* Soft inner shadow for panels */
   .panel-soft {
     @apply bg-panel border border-border rounded-lg;
-    box-shadow: 
-      0 4px 24px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(220, 38, 38, 0.03),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.04);
   }
 
   /* Red glow effect for CTAs */
@@ -90,9 +90,9 @@
 
   /* Grid background pattern */
   .grid-pattern {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-image:
+      linear-gradient(rgba(220, 38, 38, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(220, 38, 38, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
@@ -115,6 +115,6 @@
 
   /* Subtle text shadow */
   .text-shadow {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 }

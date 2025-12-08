@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { BenefitCard } from "@/components/benefit-card";
@@ -88,10 +89,12 @@ export function WhoWeHelp() {
                 ))}
               </ul>
 
-              <Button className="w-full group">
-                Explore Products
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link href="/products">
+                <Button className="w-full group">
+                  Explore Products
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </BeveledPanel>
         </motion.div>

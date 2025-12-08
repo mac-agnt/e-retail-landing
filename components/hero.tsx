@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -16,10 +17,10 @@ export function Hero() {
         <Cubes />
         {/* Red gradient sweep */}
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-40"
           style={{
             background:
-              "linear-gradient(135deg, rgba(228, 66, 66, 0.15) 0%, transparent 40%, transparent 60%, rgba(228, 66, 66, 0.05) 100%)",
+              "linear-gradient(135deg, rgba(220, 38, 38, 0.03) 0%, transparent 40%, transparent 60%, rgba(220, 38, 38, 0.02) 100%)",
           }}
         />
       </div>
@@ -55,9 +56,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mb-10"
           >
-            <Button size="lg" className="glow-accent">
-              Book a Demo
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="glow-accent">
+                Get in Touch
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Trust Bullets */}
