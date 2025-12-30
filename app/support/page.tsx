@@ -27,20 +27,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { contactInfo } from "@/lib/data";
 
 const supportOptions = [
   {
     icon: Phone,
     title: "Phone Support",
     description: "Speak directly with our technical team",
-    detail: "+353 1 XXX XXXX",
-    availability: "Mon-Fri 9am-6pm",
-  },
-  {
-    icon: MessageCircle,
-    title: "Live Chat",
-    description: "Get instant answers to your questions",
-    detail: "Start Chat",
+    detail: contactInfo.phone,
     availability: "Mon-Fri 9am-6pm",
   },
   {

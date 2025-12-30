@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Globe } from "lucide-react";
-import { footerLinks } from "@/lib/data";
+import { Globe, MapPin, Phone, Mail } from "lucide-react";
+import { footerLinks, contactInfo } from "@/lib/data";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -80,20 +80,39 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact & Address */}
           <div>
             <h3 className="text-sm font-semibold text-text mb-4">Contact</h3>
-            <ul className="space-y-3">
-              {footerLinks.contact.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted hover:text-text transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
+                  className="flex items-start gap-2 text-sm text-muted hover:text-text transition-colors"
+                >
+                  <Phone className="h-4 w-4 mt-0.5 shrink-0" />
+                  <span>{contactInfo.phone}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${contactInfo.emailMain}`}
+                  className="flex items-start gap-2 text-sm text-muted hover:text-text transition-colors"
+                >
+                  <Mail className="h-4 w-4 mt-0.5 shrink-0" />
+                  <span>{contactInfo.emailMain}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={contactInfo.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-sm text-muted hover:text-text transition-colors"
+                >
+                  <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+                  <span>{contactInfo.address}</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -20,22 +20,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GridBg } from "@/components/ornaments/grid-bg";
 import { BeveledPanel } from "@/components/beveled-panel";
+import { contactInfo as globalContactInfo } from "@/lib/data";
 
 const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    lines: ["Unit X, Business Park", "Dublin, Ireland", "D00 XXXX"],
+    lines: ["Neolith House", "Davitt Road, Dublin 12", "Ireland"],
   },
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["+353 1 XXX XXXX", "+353 1 XXX XXXX (Support)"],
+    lines: [globalContactInfo.phone, "Mon-Fri 9am-6pm"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    lines: ["info@e-retail.ie", "support@e-retail.ie"],
+    lines: [globalContactInfo.emailMain, globalContactInfo.emailSales],
   },
   {
     icon: Clock,
@@ -295,15 +296,22 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-text mb-6">Find Us</h2>
             
             {/* Map Placeholder */}
-            <BeveledPanel className="aspect-video mb-8 overflow-hidden">
-              <div className="w-full h-full bg-panel-2 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-accent mx-auto mb-3" />
-                  <p className="text-muted">Interactive map coming soon</p>
-                  <p className="text-sm text-muted mt-2">Dublin, Ireland</p>
+            <a 
+              href={globalContactInfo.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <BeveledPanel className="aspect-video mb-8 overflow-hidden hover:opacity-90 transition-opacity">
+                <div className="w-full h-full bg-panel-2 flex items-center justify-center">
+                  <div className="text-center">
+                    <MapPin className="h-12 w-12 text-accent mx-auto mb-3" />
+                    <p className="text-muted">Open in Google Maps</p>
+                    <p className="text-sm text-muted mt-2">Neolith House, Davitt Road, Dublin 12</p>
+                  </div>
                 </div>
-              </div>
-            </BeveledPanel>
+              </BeveledPanel>
+            </a>
 
             {/* Quick Links */}
             <div className="space-y-4">

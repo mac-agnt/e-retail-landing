@@ -16,19 +16,23 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-lg border-b border-border"
+      className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
     >
       <nav
-        className="section-wrapper flex items-center justify-between h-16 md:h-20"
+        className="flex items-center justify-between w-full max-w-5xl h-16 px-6 bg-bg/90 backdrop-blur-md border border-border/50 rounded-full shadow-lg"
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <Link
+        <a
           href="/"
-          className="flex items-center gap-2 text-xl font-bold text-text hover:text-accent transition-colors focus-ring rounded-md"
+          className="flex items-center gap-3 focus-ring rounded-md"
         >
-          <span className="text-accent">e</span>-Retail
-        </Link>
+          <img
+            src="/images/e-retail-logo.png"
+            alt="e-Retail automated cash management systems logo"
+            className="h-8 w-auto object-contain"
+          />
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
@@ -37,7 +41,7 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm text-muted hover:text-text transition-colors focus-ring rounded-md px-2 py-1"
+                  className="text-sm font-medium text-muted hover:text-text transition-colors focus-ring rounded-md px-2 py-1"
                 >
                   {item.label}
                 </Link>
@@ -47,7 +51,7 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <Link href="/contact">
-              <Button size="sm">Get in Touch</Button>
+              <Button size="sm" className="rounded-full px-6">Get in Touch</Button>
             </Link>
           </div>
         </div>
@@ -79,7 +83,7 @@ export function Header() {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={cn(
-          "lg:hidden overflow-hidden bg-panel border-t border-border",
+          "absolute top-20 left-4 right-4 lg:hidden overflow-hidden bg-panel border border-border rounded-2xl shadow-xl",
           !mobileMenuOpen && "pointer-events-none"
         )}
       >

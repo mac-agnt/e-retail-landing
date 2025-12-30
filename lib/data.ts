@@ -26,6 +26,14 @@ export const benefits = [
   },
 ];
 
+export const contactInfo = {
+  phone: "+353 1 455 9511",
+  emailMain: "info@e-retail.ie",
+  emailSales: "pturner@e-retail.ie",
+  address: "Neolith House, Davitt Road, Dublin 12, Ireland",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=Neolith+House,+Davitt+Road,+Dublin+12,+Ireland",
+};
+
 export const products = [
   {
     title: "CashGuard Core",
@@ -105,41 +113,40 @@ export const logos = [
 
 export const footerLinks = {
   company: [
-    { label: "About Us", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "News", href: "#" },
-    { label: "Partners", href: "#" },
+    { label: "About Us", href: "/about" },
+    { label: "News", href: "/news" },
+    { label: "Partners", href: "/partners" },
   ],
   products: [
-    { label: "CashGuard Core", href: "#" },
-    { label: "CashGuard Premium", href: "#" },
-    { label: "CashProtect Pro", href: "#" },
-    { label: "CashProtect Fusion", href: "#" },
-    { label: "CashMag Mini", href: "#" },
-    { label: "CashGuard Uni", href: "#" },
+    { label: "CashGuard Core", href: "/products/cashguard-core" },
+    { label: "CashGuard Premium", href: "/products/cashguard-premium" },
+    { label: "CashProtect Pro", href: "/products/cashprotect-pro" },
+    { label: "CashProtect Fusion", href: "/products/cashprotect-fusion" },
+    { label: "CashMag Mini", href: "/products/cashmag-mini" },
+    { label: "CashGuard Uni", href: "/products/cashguard-uni" },
   ],
   industries: [
-    { label: "Retail", href: "#" },
-    { label: "Hospitality", href: "#" },
-    { label: "Quick Service", href: "#" },
-    { label: "Entertainment", href: "#" },
+    { label: "Retail", href: "/industries/retail" },
+    { label: "Hospitality", href: "/industries/hospitality" },
+    { label: "Quick Service", href: "/industries/quick-service" },
+    { label: "Entertainment", href: "/industries/entertainment" },
   ],
   support: [
-    { label: "Documentation", href: "#" },
-    { label: "Installation", href: "#" },
-    { label: "Training", href: "#" },
-    { label: "Contact Support", href: "#" },
+    { label: "Documentation", href: "/support#documentation" },
+    { label: "Installation", href: "/support#installation" },
+    { label: "Training", href: "/support#training" },
+    { label: "Contact Support", href: "/contact" },
   ],
   contact: [
-    { label: "Sales Inquiry", href: "#" },
-    { label: "Request Demo", href: "#" },
-    { label: "Get a Quote", href: "#" },
-    { label: "Find a Partner", href: "#" },
+    { label: "Sales Inquiry", href: "/contact?salesInquiry=true" },
+    { label: "Request Demo", href: "/contact?demo=true" },
+    { label: "Get a Quote", href: "/contact?quote=true" },
+    { label: "Find a Partner", href: "/contact?partner=true" },
   ],
 };
 
 export const trustBullets = [
-  "500+ installations nationwide",
-  "Trusted by Irish retailers",
-  "Full installation & support",
+  "Up to 98% reduction in cash shrinkage",
+  "20 seconds faster per customer transaction",
+  "Full installation, training & 24/7 support",
 ];
