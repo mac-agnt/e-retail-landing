@@ -48,7 +48,7 @@ const industries = [
       "Secure drop box collection",
     ],
     products: ["CashProtect Fusion", "CashMag Mini", "CashGuard Uni"],
-    stats: { value: "20s", label: "Average time saved per transaction" },
+    stats: { value: "28 seconds", label: "Average time saved per transaction" },
   },
   {
     id: "quick-service",
