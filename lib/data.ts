@@ -83,7 +83,7 @@ export const kpis = [
   {
     value: "98%",
     label: "Reduction in Discrepancies",
-    note: "Compared to manual cash handling",
+    note: "Compared to traditional cash handling",
   },
   {
     value: "20s",
@@ -132,9 +132,9 @@ export const footerLinks = {
     { label: "Entertainment", href: "/industries/entertainment" },
   ],
   support: [
-    { label: "Documentation", href: "/support#documentation" },
-    { label: "Installation", href: "/support#installation" },
-    { label: "Training", href: "/support#training" },
+    { label: "Support Overview", href: "/support" },
+    { label: "Service Coverage", href: "/support" },
+    { label: "Training", href: "/support" },
     { label: "Contact Support", href: "/contact" },
   ],
   contact: [
