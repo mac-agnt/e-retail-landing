@@ -5,11 +5,6 @@ import {
   FileText, 
   Wrench, 
   Phone, 
-  MessageCircle, 
-  ChevronDown,
-  Download,
-  PlayCircle,
-  Book,
   HelpCircle,
   Clock,
   Shield,
@@ -53,45 +48,6 @@ const supportOptions = [
   },
 ];
 
-const resources = [
-  {
-    icon: Book,
-    title: "User Manuals",
-    description: "Complete documentation for all products",
-    items: [
-      "CashGuard Core Manual",
-      "CashGuard Premium Manual",
-      "CashProtect Pro Manual",
-      "CashProtect Fusion Manual",
-      "CashMag Mini Manual",
-      "CashGuard Uni Manual",
-    ],
-  },
-  {
-    icon: PlayCircle,
-    title: "Video Tutorials",
-    description: "Step-by-step video guides",
-    items: [
-      "Getting Started",
-      "Daily Operations",
-      "End of Day Procedures",
-      "Troubleshooting Common Issues",
-      "Maintenance & Cleaning",
-    ],
-  },
-  {
-    icon: Download,
-    title: "Software Downloads",
-    description: "Latest software and updates",
-    items: [
-      "CashGuard Manager v3.2",
-      "Reporting Dashboard",
-      "POS Integration Drivers",
-      "Firmware Updates",
-    ],
-  },
-];
-
 const faqs = [
   {
     question: "How often should I clean my CashGuard unit?",
@@ -115,7 +71,7 @@ const faqs = [
   },
   {
     question: "How do I empty the collection cassette?",
-    answer: "Use your supervisor key to access the collection area. Remove the cassette and transport it to your secure counting area. Replace with an empty cassette and log the collection in the system. Full instructions are in your user manual.",
+    answer: "Use your supervisor key to access the collection area. Remove the cassette and transport it to your secure counting area. Replace with an empty cassette and log the collection in the system. If you need step-by-step guidance, contact our support team.",
   },
   {
     question: "What happens if the system goes offline?",
@@ -164,7 +120,7 @@ export default function SupportPage() {
               Support & <span className="text-accent">Resources</span>
             </h1>
             <p className="text-lg text-muted">
-              We're here to help. Access documentation, get technical support,
+              We're here to help. Get technical support,
               or speak with our team.
             </p>
           </motion.div>
@@ -217,44 +173,6 @@ export default function SupportPage() {
               </div>
               <h3 className="text-xl font-semibold text-text mb-2">{feature.title}</h3>
               <p className="text-muted">{feature.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Resources */}
-      <Section>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-text mb-4">Documentation & Resources</h2>
-          <p className="text-muted">Everything you need to get the most from your system</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {resources.map((resource, index) => (
-            <motion.div
-              key={resource.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <BeveledPanel className="p-6 h-full">
-                <resource.icon className="h-10 w-10 text-accent mb-4" />
-                <h3 className="text-xl font-semibold text-text mb-2">{resource.title}</h3>
-                <p className="text-sm text-muted mb-4">{resource.description}</p>
-                <ul className="space-y-2">
-                  {resource.items.map((item) => (
-                    <li key={item}>
-                      <a
-                        href="#"
-                        className="text-sm text-muted hover:text-accent transition-colors flex items-center gap-2"
-                      >
-                        <Download className="h-3 w-3" />
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </BeveledPanel>
             </motion.div>
           ))}
         </div>

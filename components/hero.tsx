@@ -55,11 +55,6 @@ export function Hero() {
                   Book a Free Store Assessment
                 </Button>
               </Link>
-              <Link href="/roi-calculator">
-                <Button size="lg" variant="outline">
-                  Calculate Your Cash Handling Costs →
-                </Button>
-              </Link>
             </motion.div>
 
             {/* Trust Bullets */}
