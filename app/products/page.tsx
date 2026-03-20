@@ -205,6 +205,12 @@ export default function ProductsPage() {
                   </ul>
                 </div>
 
+                <Link href={`/products/${product.id}`}>
+                  <Button variant="secondary">
+                    View {product.title}
+                  </Button>
+                </Link>
+
               </div>
             </motion.div>
           ))}

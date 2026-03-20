@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { navItems } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -41,19 +40,18 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-muted hover:text-text transition-colors focus-ring rounded-md px-2 py-1"
+                  className={cn(
+                    "text-sm font-medium transition-colors focus-ring rounded-md px-2 py-1",
+                    item.href === "/contact"
+                      ? "inline-flex items-center justify-center rounded-full px-5 py-2 bg-accent text-white hover:bg-accent/90 shadow-md shadow-accent/20"
+                      : "text-muted hover:text-text"
+                  )}
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-
-          <div className="flex items-center gap-3">
-            <Link href="/contact">
-              <Button size="sm" className="rounded-full px-6">Get in Touch</Button>
-            </Link>
-          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -93,7 +91,12 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="block py-2 text-muted hover:text-text transition-colors"
+                  className={cn(
+                    "block py-2 transition-colors",
+                    item.href === "/contact"
+                      ? "mt-2 inline-flex w-full items-center justify-center rounded-lg bg-accent px-4 py-3 text-white hover:bg-accent/90 font-medium"
+                      : "text-muted hover:text-text"
+                  )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -101,11 +104,6 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <div className="flex flex-col gap-2 pt-4 border-t border-border">
-            <Link href="/contact">
-              <Button className="w-full">Get in Touch</Button>
-            </Link>
-          </div>
         </div>
       </motion.div>
     </motion.header>

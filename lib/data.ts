@@ -5,7 +5,7 @@ export const navItems = [
   { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Support", href: "/support" },
-  { label: "Contact", href: "/contact" },
+  { label: "Get in Touch", href: "/contact" },
 ];
 
 export const benefits = [
@@ -28,10 +28,12 @@ export const benefits = [
 
 export const contactInfo = {
   phone: "+353 1 455 9511",
+  phoneTel: "tel:+35314559511",
   emailMain: "info@e-retail.ie",
   emailSales: "pturner@e-retail.ie",
   address: "Neolith House, Davitt Road, Dublin 12, Ireland",
   mapLink: "https://www.google.com/maps/search/?api=1&query=Neolith+House,+Davitt+Road,+Dublin+12,+Ireland",
+  directionsLink: "https://www.google.com/maps/dir/?api=1&destination=Neolith+House,+Davitt+Road,+Dublin+12,+Ireland",
 };
 
 export const products = [

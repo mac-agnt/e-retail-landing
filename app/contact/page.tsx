@@ -1,86 +1,53 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock,
-  Send,
-  CheckCircle,
-  Building,
-  Users,
-  Wrench
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Section } from "@/components/section";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { GridBg } from "@/components/ornaments/grid-bg";
-import { BeveledPanel } from "@/components/beveled-panel";
 import { contactInfo as globalContactInfo } from "@/lib/data";
 
-const contactInfo = [
+const contactCards = [
   {
     icon: MapPin,
     title: "Visit Us",
     lines: ["Neolith House", "Davitt Road, Dublin 12", "Ireland"],
+    href: globalContactInfo.directionsLink,
+    action: "Get directions",
   },
   {
     icon: Phone,
     title: "Call Us",
     lines: [globalContactInfo.phone, "Mon-Fri 9am-6pm"],
+    href: globalContactInfo.phoneTel,
+    action: "Call now",
   },
   {
     icon: Mail,
     title: "Email Us",
     lines: [globalContactInfo.emailMain, globalContactInfo.emailSales],
+    href: `mailto:${globalContactInfo.emailMain}`,
+    action: "Send email",
   },
   {
     icon: Clock,
     title: "Business Hours",
     lines: ["Monday - Friday: 9am - 6pm", "Saturday: 10am - 2pm", "Sunday: Closed"],
+    href: null,
+    action: null,
   },
 ];
 
-const inquiryTypes = [
-  { value: "sales", label: "Sales Inquiry", icon: Building },
-  { value: "demo", label: "Book a Demo", icon: Users },
-  { value: "support", label: "Technical Support", icon: Wrench },
-  { value: "other", label: "Other", icon: Mail },
-];
-
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    inquiryType: "sales",
-    message: "",
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In production, this would send to an API
-    console.log("Form submitted:", formState);
-    setIsSubmitted(true);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormState((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const mapEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(
+    globalContactInfo.address
+  )}&output=embed`;
 
   return (
     <main className="min-h-screen bg-bg">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <GridBg />
@@ -95,262 +62,112 @@ export default function ContactPage() {
               Get in <span className="text-accent">Touch</span>
             </h1>
             <p className="text-lg text-muted">
-              Ready to transform your cash management? Contact our team for a consultation,
-              demo, or any questions you may have.
+              Ready to transform your cash management? Reach out by phone, email,
+              or visit us in Dublin.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Info Cards */}
+      {/* Contact Cards */}
       <Section>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {contactInfo.map((info, index) => (
-            <motion.div
-              key={info.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <BeveledPanel className="p-6 h-full text-center">
-                <info.icon className="h-8 w-8 text-accent mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-text mb-3">{info.title}</h3>
-                {info.lines.map((line, i) => (
-                  <p key={i} className="text-sm text-muted">
-                    {line}
-                  </p>
-                ))}
-              </BeveledPanel>
-            </motion.div>
-          ))}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {contactCards.map((card, index) => {
+            const isLink = !!card.href;
+            const content = (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className={`relative h-full rounded-2xl border border-border bg-panel p-8 text-center transition-all duration-300 ${
+                  isLink
+                    ? "hover:border-accent/50 hover:shadow-lg hover:shadow-accent/5 cursor-pointer group"
+                    : ""
+                }`}
+              >
+                <div className="inline-flex p-4 rounded-xl bg-accent/10 mb-5">
+                  <card.icon className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-semibold text-text mb-4">{card.title}</h3>
+                <div className="space-y-1 mb-4">
+                  {card.lines.map((line, i) => (
+                    <p key={i} className="text-sm text-muted">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+                {isLink && (
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-accent group-hover:gap-3 transition-all">
+                    {card.action}
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                )}
+              </motion.div>
+            );
+
+            if (isLink) {
+              return (
+                <a
+                  key={card.title}
+                  href={card.href!}
+                  target={card.href.startsWith("http") ? "_blank" : undefined}
+                  rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="block h-full"
+                >
+                  {content}
+                </a>
+              );
+            }
+
+            return <div key={card.title}>{content}</div>;
+          })}
         </div>
 
-        {/* Contact Form & Map */}
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl font-bold text-text mb-6">Send us a message</h2>
-            
-            {isSubmitted ? (
-              <BeveledPanel className="p-8 text-center">
-                <CheckCircle className="h-16 w-16 text-accent mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-text mb-2">Thank you!</h3>
-                <p className="text-muted mb-6">
-                  We've received your message and will get back to you within 24 hours.
-                </p>
-                <Button
-                  variant="secondary"
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    setFormState({
-                      name: "",
-                      email: "",
-                      phone: "",
-                      company: "",
-                      inquiryType: "sales",
-                      message: "",
-                    });
-                  }}
-                >
-                  Send Another Message
-                </Button>
-              </BeveledPanel>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Inquiry Type */}
-                <div>
-                  <label className="block text-sm font-medium text-text mb-3">
-                    What can we help you with?
-                  </label>
-                  <div className="grid grid-cols-2 gap-3">
-                    {inquiryTypes.map((type) => (
-                      <label
-                        key={type.value}
-                        className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer transition-all ${
-                          formState.inquiryType === type.value
-                            ? "border-accent bg-accent/10"
-                            : "border-border bg-panel hover:border-accent/50"
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="inquiryType"
-                          value={type.value}
-                          checked={formState.inquiryType === type.value}
-                          onChange={handleChange}
-                          className="sr-only"
-                        />
-                        <type.icon className={`h-5 w-5 ${
-                          formState.inquiryType === type.value ? "text-accent" : "text-muted"
-                        }`} />
-                        <span className={`text-sm ${
-                          formState.inquiryType === type.value ? "text-text" : "text-muted"
-                        }`}>
-                          {type.label}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Name & Email */}
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-text mb-2">
-                      Your Name *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formState.name}
-                      onChange={handleChange}
-                      placeholder="John Smith"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-text mb-2">
-                      Email Address *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formState.email}
-                      onChange={handleChange}
-                      placeholder="john@company.ie"
-                    />
-                  </div>
-                </div>
-
-                {/* Phone & Company */}
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-text mb-2">
-                      Phone Number
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formState.phone}
-                      onChange={handleChange}
-                      placeholder="+353 1 XXX XXXX"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-text mb-2">
-                      Company Name
-                    </label>
-                    <Input
-                      id="company"
-                      name="company"
-                      type="text"
-                      value={formState.company}
-                      onChange={handleChange}
-                      placeholder="Your Company Ltd"
-                    />
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-text mb-2">
-                    Your Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formState.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your business and how we can help..."
-                    className="w-full px-4 py-3 bg-panel border border-border rounded-lg text-text placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors resize-none"
-                  />
-                </div>
-
-                <Button type="submit" size="lg" className="w-full glow-accent">
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Message
-                </Button>
-              </form>
-            )}
-          </motion.div>
-
-          {/* Map / Additional Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl font-bold text-text mb-6">Find Us</h2>
-            
-            {/* Map Placeholder */}
-            <a 
-              href={globalContactInfo.mapLink}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-10 max-w-5xl mx-auto"
+        >
+          <div className="rounded-2xl border border-border bg-panel p-4 md:p-6">
+            <div className="flex items-center justify-between gap-4 mb-4">
+              <div>
+                <h2 className="text-2xl font-semibold text-text">Find Our Office</h2>
+                <p className="text-sm text-muted">{globalContactInfo.address}</p>
+              </div>
+              <a
+                href={globalContactInfo.directionsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-border bg-bg px-4 py-2 text-sm font-medium text-text hover:border-accent/50 hover:text-accent transition-colors"
+              >
+                Open directions
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="overflow-hidden rounded-xl border border-border">
+              <iframe
+                title="e-Retail Office Location"
+                src={mapEmbedSrc}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-[320px] md:h-[420px] w-full"
+              />
+            </div>
+            <a
+              href={globalContactInfo.directionsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="block"
+              className="mt-4 inline-flex sm:hidden items-center gap-2 rounded-lg border border-border bg-bg px-4 py-2 text-sm font-medium text-text hover:border-accent/50 hover:text-accent transition-colors"
             >
-              <BeveledPanel className="aspect-video mb-8 overflow-hidden hover:opacity-90 transition-opacity">
-                <div className="w-full h-full bg-panel-2 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-accent mx-auto mb-3" />
-                    <p className="text-muted">Open in Google Maps</p>
-                    <p className="text-sm text-muted mt-2">Neolith House, Davitt Road, Dublin 12</p>
-                  </div>
-                </div>
-              </BeveledPanel>
+              Open directions
+              <ArrowRight className="h-4 w-4" />
             </a>
-
-            {/* Quick Links */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-text">Quick Actions</h3>
-              <div className="grid gap-3">
-                <a
-                  href="/products"
-                  className="flex items-center gap-3 p-4 bg-panel rounded-lg border border-border hover:border-accent/50 transition-colors"
-                >
-                  <Building className="h-5 w-5 text-accent" />
-                  <div>
-                    <div className="text-text font-medium">View Our Products</div>
-                    <div className="text-sm text-muted">Explore our full range of solutions</div>
-                  </div>
-                </a>
-                <a
-                  href="/case-studies"
-                  className="flex items-center gap-3 p-4 bg-panel rounded-lg border border-border hover:border-accent/50 transition-colors"
-                >
-                  <Users className="h-5 w-5 text-accent" />
-                  <div>
-                    <div className="text-text font-medium">Read Case Studies</div>
-                    <div className="text-sm text-muted">See how we've helped other businesses</div>
-                  </div>
-                </a>
-                <a
-                  href="/support"
-                  className="flex items-center gap-3 p-4 bg-panel rounded-lg border border-border hover:border-accent/50 transition-colors"
-                >
-                  <Wrench className="h-5 w-5 text-accent" />
-                  <div>
-                    <div className="text-text font-medium">Get Support</div>
-                    <div className="text-sm text-muted">Access documentation and help</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </Section>
 
       <Footer />

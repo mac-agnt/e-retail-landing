@@ -13,6 +13,12 @@ import { GridBg } from "@/components/ornaments/grid-bg";
 import { BeveledPanel } from "@/components/beveled-panel";
 import { productsData, productSlugs } from "@/lib/products-data";
 
+const productVideos: Record<string, string> = {
+  "cashmag-mini": "/videos/20260223_112016.mp4",
+  "cashguard-uni": "/videos/20260223_111354.mp4",
+  "cashguard-core": "/videos/20260223_111140.mp4",
+};
+
 export default function ProductPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -159,55 +165,72 @@ export default function ProductPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            {/* Dimensions */}
-            <BeveledPanel className="p-6 mb-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Ruler className="h-6 w-6 text-accent" />
-                <h3 className="text-xl font-semibold text-text">Dimensions</h3>
+            {productVideos[slug] ? (
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-xl border border-border">
+                  <video
+                    src={productVideos[slug]}
+                    controls
+                    className="w-full aspect-video object-cover"
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
-              {"noteUnit" in product.dimensions && product.dimensions.noteUnit && (
-                <div className="mb-4">
-                  <h4 className="text-sm font-medium text-accent mb-2">Note Unit</h4>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div className="text-muted">Width: <span className="text-text">{product.dimensions.noteUnit.width}</span></div>
-                    <div className="text-muted">Height: <span className="text-text">{product.dimensions.noteUnit.height}</span></div>
-                    <div className="text-muted">Depth: <span className="text-text">{product.dimensions.noteUnit.depth}</span></div>
-                    <div className="text-muted">Weight: <span className="text-text">{product.dimensions.noteUnit.weight}</span></div>
+            ) : (
+              <>
+                {/* Dimensions */}
+                <BeveledPanel className="p-6 mb-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Ruler className="h-6 w-6 text-accent" />
+                    <h3 className="text-xl font-semibold text-text">Dimensions</h3>
                   </div>
-                </div>
-              )}
-              {"coinUnit" in product.dimensions && product.dimensions.coinUnit && (
-                <div className="mb-4">
-                  <h4 className="text-sm font-medium text-accent mb-2">Coin Unit</h4>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div className="text-muted">Width: <span className="text-text">{product.dimensions.coinUnit.width}</span></div>
-                    <div className="text-muted">Height: <span className="text-text">{product.dimensions.coinUnit.height}</span></div>
-                    <div className="text-muted">Depth: <span className="text-text">{product.dimensions.coinUnit.depth}</span></div>
-                    <div className="text-muted">Weight: <span className="text-text">{product.dimensions.coinUnit.weight}</span></div>
-                  </div>
-                </div>
-              )}
-              {"combined" in product.dimensions && product.dimensions.combined && (
-                <div>
-                  <h4 className="text-sm font-medium text-accent mb-2">Unit Dimensions</h4>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div className="text-muted">Width: <span className="text-text">{product.dimensions.combined.width}</span></div>
-                    <div className="text-muted">Height: <span className="text-text">{product.dimensions.combined.height}</span></div>
-                    <div className="text-muted">Depth: <span className="text-text">{product.dimensions.combined.depth}</span></div>
-                    <div className="text-muted">Weight: <span className="text-text">{product.dimensions.combined.weight}</span></div>
-                  </div>
-                </div>
-              )}
-            </BeveledPanel>
+                  {"noteUnit" in product.dimensions && product.dimensions.noteUnit && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-medium text-accent mb-2">Note Unit</h4>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div className="text-muted">Width: <span className="text-text">{product.dimensions.noteUnit.width}</span></div>
+                        <div className="text-muted">Height: <span className="text-text">{product.dimensions.noteUnit.height}</span></div>
+                        <div className="text-muted">Depth: <span className="text-text">{product.dimensions.noteUnit.depth}</span></div>
+                        <div className="text-muted">Weight: <span className="text-text">{product.dimensions.noteUnit.weight}</span></div>
+                      </div>
+                    </div>
+                  )}
+                  {"coinUnit" in product.dimensions && product.dimensions.coinUnit && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-medium text-accent mb-2">Coin Unit</h4>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div className="text-muted">Width: <span className="text-text">{product.dimensions.coinUnit.width}</span></div>
+                        <div className="text-muted">Height: <span className="text-text">{product.dimensions.coinUnit.height}</span></div>
+                        <div className="text-muted">Depth: <span className="text-text">{product.dimensions.coinUnit.depth}</span></div>
+                        <div className="text-muted">Weight: <span className="text-text">{product.dimensions.coinUnit.weight}</span></div>
+                      </div>
+                    </div>
+                  )}
+                  {"combined" in product.dimensions && product.dimensions.combined && (
+                    <div>
+                      <h4 className="text-sm font-medium text-accent mb-2">Unit Dimensions</h4>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div className="text-muted">Width: <span className="text-text">{product.dimensions.combined.width}</span></div>
+                        <div className="text-muted">Height: <span className="text-text">{product.dimensions.combined.height}</span></div>
+                        <div className="text-muted">Depth: <span className="text-text">{product.dimensions.combined.depth}</span></div>
+                        <div className="text-muted">Weight: <span className="text-text">{product.dimensions.combined.weight}</span></div>
+                      </div>
+                    </div>
+                  )}
+                </BeveledPanel>
 
-            {/* Manufacturer */}
-            <BeveledPanel className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Building className="h-6 w-6 text-accent" />
-                <h3 className="text-xl font-semibold text-text">A Solution by {product.manufacturer}</h3>
-              </div>
-              <p className="text-muted text-sm">{product.manufacturerNote}</p>
-            </BeveledPanel>
+                {/* Manufacturer */}
+                <BeveledPanel className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Building className="h-6 w-6 text-accent" />
+                    <h3 className="text-xl font-semibold text-text">A Solution by {product.manufacturer}</h3>
+                  </div>
+                  <p className="text-muted text-sm">{product.manufacturerNote}</p>
+                </BeveledPanel>
+              </>
+            )}
           </motion.div>
         </div>
       </Section>
@@ -257,6 +280,60 @@ export default function ProductPage() {
           </motion.div>
         </div>
       </Section>
+
+      {/* Dimensions & Manufacturer - bottom (products with video) */}
+      {productVideos[slug] && (
+        <Section>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <BeveledPanel className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Ruler className="h-6 w-6 text-accent" />
+                <h3 className="text-xl font-semibold text-text">Dimensions</h3>
+              </div>
+              {"noteUnit" in product.dimensions && product.dimensions.noteUnit && (
+                <div className="mb-4">
+                  <h4 className="text-sm font-medium text-accent mb-2">Note Unit</h4>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    <div className="text-muted">Width: <span className="text-text">{product.dimensions.noteUnit.width}</span></div>
+                    <div className="text-muted">Height: <span className="text-text">{product.dimensions.noteUnit.height}</span></div>
+                    <div className="text-muted">Depth: <span className="text-text">{product.dimensions.noteUnit.depth}</span></div>
+                    <div className="text-muted">Weight: <span className="text-text">{product.dimensions.noteUnit.weight}</span></div>
+                  </div>
+                </div>
+              )}
+              {"coinUnit" in product.dimensions && product.dimensions.coinUnit && (
+                <div className="mb-4">
+                  <h4 className="text-sm font-medium text-accent mb-2">Coin Unit</h4>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    <div className="text-muted">Width: <span className="text-text">{product.dimensions.coinUnit.width}</span></div>
+                    <div className="text-muted">Height: <span className="text-text">{product.dimensions.coinUnit.height}</span></div>
+                    <div className="text-muted">Depth: <span className="text-text">{product.dimensions.coinUnit.depth}</span></div>
+                    <div className="text-muted">Weight: <span className="text-text">{product.dimensions.coinUnit.weight}</span></div>
+                  </div>
+                </div>
+              )}
+              {"combined" in product.dimensions && product.dimensions.combined && (
+                <div>
+                  <h4 className="text-sm font-medium text-accent mb-2">Unit Dimensions</h4>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    <div className="text-muted">Width: <span className="text-text">{product.dimensions.combined.width}</span></div>
+                    <div className="text-muted">Height: <span className="text-text">{product.dimensions.combined.height}</span></div>
+                    <div className="text-muted">Depth: <span className="text-text">{product.dimensions.combined.depth}</span></div>
+                    <div className="text-muted">Weight: <span className="text-text">{product.dimensions.combined.weight}</span></div>
+                  </div>
+                </div>
+              )}
+            </BeveledPanel>
+            <BeveledPanel className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Building className="h-6 w-6 text-accent" />
+                <h3 className="text-xl font-semibold text-text">A Solution by {product.manufacturer}</h3>
+              </div>
+              <p className="text-muted text-sm">{product.manufacturerNote}</p>
+            </BeveledPanel>
+          </div>
+        </Section>
+      )}
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
