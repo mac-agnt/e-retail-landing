@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Globe, MapPin, Phone, Mail } from "lucide-react";
 import { footerLinks, contactInfo } from "@/lib/data";
 
@@ -121,8 +122,15 @@ export function Footer() {
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo & Copyright */}
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-lg font-bold text-text">
-              <span className="text-accent">e</span>-Retail
+            <Link href="/" className="inline-flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-panel">
+              <Image
+                src="/images/e-retail-logo.png"
+                alt="e-Retail logo"
+                width={148}
+                height={34}
+                className="h-8 w-auto object-contain"
+                priority={false}
+              />
             </Link>
             <span className="text-sm text-muted">
               © {currentYear} e-Retail. All rights reserved.

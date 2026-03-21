@@ -28,7 +28,9 @@ export function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-text leading-tight mb-6"
             >
               Your Tills Are Leaking Cash.{" "}
-              <span className="text-accent">We Stop It.</span>
+              <span className="bg-gradient-to-r from-[#ff6f6f] via-[#e63333] to-[#a3151b] bg-clip-text text-transparent">
+                We Stop It.
+              </span>
             </motion.h1>
 
             {/* Subcopy */}
@@ -38,9 +40,17 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-muted mb-10 max-w-2xl mx-auto"
             >
-              e-Retail&apos;s automated cash systems eliminate till discrepancies,
-              cut cash-handling labour by 80%, and pay for themselves in under
-              18 months. Trusted by 500+ stores across Ireland.
+              e-Retail&apos;s automated cash systems eliminate till discrepancies,{" "}
+              <span className="text-zinc-700">cut cash-handling labour by 80%</span>
+              , and{" "}
+              <span className="text-zinc-700">
+                pay for themselves in under 18 months
+              </span>
+              .{" "}
+              <span className="text-zinc-700">
+                Trusted by 500+ stores across Ireland
+              </span>
+              .
             </motion.p>
 
             {/* CTAs */}
@@ -51,8 +61,20 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
             >
               <Link href="/contact">
-                <Button size="lg" className="glow-accent">
-                  Book a Free Store Assessment
+                <Button
+                  size="lg"
+                  className="rounded-full bg-accent px-8 text-white shadow-[0_10px_26px_-14px_rgba(220,38,38,0.8)] hover:bg-accent/90"
+                >
+                  Get in touch
+                </Button>
+              </Link>
+              <Link href="/products">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="rounded-full border border-zinc-300 bg-white/90 px-8 text-zinc-800 hover:bg-white"
+                >
+                  View products
                 </Button>
               </Link>
             </motion.div>

@@ -117,7 +117,7 @@ export default function SupportPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6">
-              Support & <span className="text-accent">Resources</span>
+              Support & <span className="text-accent-gradient">Resources</span>
             </h1>
             <p className="text-lg text-muted">
               We're here to help. Get technical support,
@@ -142,7 +142,7 @@ export default function SupportPage() {
                 <option.icon className="h-10 w-10 text-accent mb-4" />
                 <h3 className="text-lg font-semibold text-text mb-2">{option.title}</h3>
                 <p className="text-sm text-muted mb-4">{option.description}</p>
-                <div className="text-accent font-semibold mb-1">{option.detail}</div>
+                <div className="text-accent-gradient font-semibold mb-1">{option.detail}</div>
                 <div className="text-xs text-muted">{option.availability}</div>
               </BeveledPanel>
             </motion.div>

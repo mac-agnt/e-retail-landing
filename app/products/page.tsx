@@ -15,7 +15,7 @@ const products = [
     id: "cashguard-core",
     title: "CashGuard Core",
     price: "€12.5K",
-    image: "/images/cashguard-core.jpeg",
+    image: "/images/cashguard-core.png",
     description: "New generation CashGuard with new sleek design and small footprint to fit all counter sizes.",
     idealFor: ["Supermarkets", "Convenience stores", "Forecourts"],
     features: [
@@ -30,7 +30,7 @@ const products = [
     id: "cashguard-premium",
     title: "CashGuard Premium",
     price: "€11.8K",
-    image: "/images/cashguard-premium.jpeg",
+    image: "/images/cashguard-premium.png",
     description: "500+ Installations Nationwide. The fastest cash machine technology for note return on market.",
     idealFor: ["Supermarkets", "Convenience stores", "Forecourts"],
     features: [
@@ -45,7 +45,7 @@ const products = [
     id: "cashprotect-pro",
     title: "CashProtect Pro",
     price: "€11.5K",
-    image: "/images/cashprotect-pro.jpeg",
+    image: "/images/cashprotect-pro.png",
     description: "Versatile solution ideal for retail and hospitality environments with single note slot for acceptance and return.",
     idealFor: ["Supermarkets", "Convenience stores", "Forecourts", "Bars", "Restaurants"],
     features: [
@@ -60,7 +60,7 @@ const products = [
     id: "cashprotect-fusion",
     title: "CashProtect Fusion",
     price: "€8.5K",
-    image: "/images/cashprotect-fusion.jpeg",
+    image: "/images/cashprotect-fusion.png",
     description: "All-in-one note and coin acceptance and return. For speed/price/size - surpasses all expectations.",
     idealFor: ["Small Convenience shops", "Pharmacy", "Hospitality", "Bars", "Restaurants", "Limited Space"],
     features: [
@@ -75,7 +75,7 @@ const products = [
     id: "cashmag-mini",
     title: "CashMag Mini",
     price: "€6.5K",
-    image: "/images/cashmag-mini.jpeg",
+    image: "/images/cashmag-mini.png",
     description: "Compact all-in-one solution ideal for environments with limited counter space.",
     idealFor: ["Pharmacy", "Restaurants", "Limited Space environments"],
     features: [
@@ -90,7 +90,7 @@ const products = [
     id: "cashguard-uni",
     title: "CashGuard Uni",
     price: "€6.5K",
-    image: "/images/cashguard-uni.jpeg",
+    image: "/images/cashguard-uni.png",
     description: "Compact, front-office cash recycling solution that accepts, validates, and dispenses both notes and coins.",
     idealFor: ["All retail environments", "Front-office operations", "Multi-lane deployments"],
     features: [
@@ -119,7 +119,7 @@ export default function ProductsPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6">
-              Our <span className="text-accent">Products</span>
+              Our <span className="text-accent-gradient">Products</span>
             </h1>
             <p className="text-lg text-muted">
               Navigate cash with confidence. Tailored solutions for your business needs,
@@ -168,14 +168,14 @@ export default function ProductsPage() {
                   <h2 className="text-3xl md:text-4xl font-bold text-text">
                     {product.title}
                   </h2>
-                  <span className="text-2xl font-bold text-accent">{product.price}</span>
+                  <span className="text-2xl font-bold text-accent-gradient">{product.price}</span>
                 </div>
                 
                 <p className="text-lg text-muted mb-6">{product.description}</p>
 
                 {/* Ideal For */}
                 <div className="mb-6">
-                  <h3 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                  <h3 className="text-sm font-semibold text-accent-gradient uppercase tracking-wider mb-3">
                     Ideal For
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -192,7 +192,7 @@ export default function ProductsPage() {
 
                 {/* Features */}
                 <div className="mb-8">
-                  <h3 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                  <h3 className="text-sm font-semibold text-accent-gradient uppercase tracking-wider mb-3">
                     Key Features
                   </h3>
                   <ul className="space-y-2">

@@ -2,101 +2,112 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { BenefitCard } from "@/components/benefit-card";
-import { BeveledPanel } from "@/components/beveled-panel";
+import { Gauge, Target, Shield } from "lucide-react";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
-import { benefits } from "@/lib/data";
+
+const featureCards = [
+  {
+    title: "Speed",
+    outcome: "Transactions completed in under 20 seconds.",
+    icon: Gauge,
+  },
+  {
+    title: "Zero Discrepancies",
+    outcome: "Eliminate human error with automated accuracy.",
+    icon: Target,
+  },
+  {
+    title: "Security",
+    outcome: "Bank-grade protection with real-time monitoring.",
+    icon: Shield,
+  },
+];
 
 export function WhoWeHelp() {
   return (
-    <Section id="solutions" className="bg-panel-2/30">
-      <div className="grid lg:grid-cols-2 gap-12 items-start">
-        {/* Left - Benefit Cards */}
-        <div className="space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">
-              Why Choose e-Retail?
-            </h2>
-            <p className="text-muted mb-8">
-              Our automated cash management solutions deliver measurable results
-              for businesses of all sizes.
-            </p>
-          </motion.div>
+    <Section
+      id="solutions"
+      className="relative overflow-hidden bg-gradient-to-b from-[#ffffff] via-[#f8f8f8] to-[#fbfbfb] py-20 md:py-24"
+      style={{
+        fontFamily:
+          '"SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif',
+      }}
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.95),rgba(245,245,246,0.55)_45%,transparent_75%)]" />
 
-          <div className="space-y-4">
-            {benefits.map((benefit, index) => (
-              <BenefitCard
-                key={benefit.title}
-                icon={benefit.icon}
-                title={benefit.title}
-                text={benefit.text}
-                index={index}
-              />
-            ))}
-          </div>
+      <div className="relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <h2 className="text-4xl font-bold leading-tight tracking-tight text-zinc-900 md:text-5xl">
+            Why Businesses Choose{" "}
+            <span className="inline-flex items-baseline">
+              <span className="bg-gradient-to-b from-[#f87171] via-[#ef4444] to-[#b91c1c] bg-clip-text text-transparent text-[1.18em] font-extrabold">
+                e
+              </span>
+              <span className="bg-gradient-to-b from-[#f87171] via-[#ef4444] to-[#b91c1c] bg-clip-text text-transparent">
+                -Retail
+              </span>
+            </span>
+          </h2>
+          <p className="mt-5 text-base text-zinc-600 md:text-lg">
+            Built to eliminate errors, accelerate transactions, and secure every
+            euro.
+          </p>
+        </motion.div>
+
+        <div className="mx-auto mt-10 h-px w-20 bg-zinc-300/80" />
+
+        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-5 md:mt-12 md:grid-cols-3 md:gap-6">
+          {featureCards.map((card, index) => (
+            <motion.article
+              key={card.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              className="group relative overflow-hidden rounded-2xl border border-zinc-200/90 bg-[#f7f7f8] px-6 py-7 shadow-[0_14px_28px_-20px_rgba(15,23,42,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-[0_20px_38px_-22px_rgba(15,23,42,0.32),0_0_0_1px_rgba(220,38,38,0.08),0_0_14px_rgba(220,38,38,0.12)]"
+            >
+              <card.icon className="h-5 w-5 text-zinc-700 mb-5" strokeWidth={1.6} />
+              <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
+                {card.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                {card.outcome}
+              </p>
+            </motion.article>
+          ))}
         </div>
 
-        {/* Right - Product Grid Intro Card */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.12 }}
+          className="mx-auto mt-12 flex flex-wrap items-center justify-center gap-3"
         >
-          <BeveledPanel className="h-full">
-            <div className="flex flex-col h-full">
-              <div className="mb-6">
-                <span className="inline-block px-3 py-1 text-xs font-medium bg-accent/10 text-accent rounded-full mb-4">
-                  Product Range
-                </span>
-                <h3 className="text-2xl font-bold text-text mb-3">
-                  Complete Cash Management Solutions
-                </h3>
-                <p className="text-muted leading-relaxed">
-                  From compact countertop units to enterprise-grade systems, we
-                  offer a comprehensive range of automated cash handling
-                  solutions tailored to your specific needs.
-                </p>
-              </div>
-
-              {/* Feature list */}
-              <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  "Multi-currency support",
-                  "Real-time reporting & analytics",
-                  "Seamless POS integration",
-                  "Cloud-connected management",
-                  "24/7 technical support",
-                ].map((feature, index) => (
-                  <motion.li
-                    key={feature}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.3 + index * 0.05 }}
-                    className="flex items-center gap-3 text-sm text-muted"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                    {feature}
-                  </motion.li>
-                ))}
-              </ul>
-
-              <Link href="/products">
-                <Button className="w-full group">
-                  Explore Products
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-            </div>
-          </BeveledPanel>
+          <Link href="/products">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="rounded-full border border-zinc-300 bg-white/90 px-7 text-zinc-800 hover:bg-white"
+            >
+              Explore
+            </Button>
+          </Link>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              className="rounded-full bg-accent px-7 text-white shadow-[0_10px_26px_-14px_rgba(220,38,38,0.8)] hover:bg-accent/90"
+            >
+              Buy now
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </Section>

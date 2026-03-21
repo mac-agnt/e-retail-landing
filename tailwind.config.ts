@@ -37,6 +37,10 @@ const config: Config = {
         "float": "float 6s ease-in-out infinite",
         "float-delayed": "float 6s ease-in-out 2s infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "kiosk-float": "kiosk-float 6s ease-in-out infinite",
+        "micro-drift-fade": "micro-drift-fade 7s ease-in-out infinite",
+        "line-pulse": "line-pulse 4s linear infinite",
+        "page-fade": "page-fade 300ms ease-out both",
       },
       keyframes: {
         float: {
@@ -46,6 +50,23 @@ const config: Config = {
         "pulse-glow": {
           "0%, 100%": { opacity: "0.5" },
           "50%": { opacity: "1" },
+        },
+        "kiosk-float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
+        "micro-drift-fade": {
+          "0%, 100%": { opacity: "0", transform: "translateY(4px)" },
+          "15%, 75%": { opacity: "1", transform: "translateY(0px)" },
+          "90%": { opacity: "0", transform: "translateY(-4px)" },
+        },
+        "line-pulse": {
+          "0%": { left: "0%" },
+          "100%": { left: "100%" },
+        },
+        "page-fade": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
     },

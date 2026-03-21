@@ -108,7 +108,7 @@ export default function IndustriesPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6">
-              Industries We <span className="text-accent">Serve</span>
+              Industries We <span className="text-accent-gradient">Serve</span>
             </h1>
             <p className="text-lg text-muted">
               Tailored cash management solutions for every business environment.
@@ -147,7 +147,7 @@ export default function IndustriesPage() {
 
               {/* Stat */}
               <div className="mb-8 p-6 bg-bg rounded-lg border border-border">
-                <div className="text-4xl font-bold text-accent mb-1">
+                <div className="text-4xl font-bold text-accent-gradient mb-1">
                   {industry.stats.value}
                 </div>
                 <div className="text-muted">{industry.stats.label}</div>
@@ -155,14 +155,14 @@ export default function IndustriesPage() {
 
               {/* Recommended Products */}
               <div className="mb-6">
-                <h3 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                <h3 className="text-sm font-semibold text-accent-gradient uppercase tracking-wider mb-3">
                   Recommended Products
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {industry.products.map((product) => (
                     <span
                       key={product}
-                      className="px-3 py-1 bg-accent/10 rounded-full text-sm text-accent border border-accent/20"
+                      className="px-3 py-1 bg-accent/10 rounded-full text-sm text-accent-gradient border border-accent/20"
                     >
                       {product}
                     </span>

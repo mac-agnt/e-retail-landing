@@ -1,16 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface SectionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   id?: string;
   fullWidth?: boolean;
+  style?: CSSProperties;
 }
 
-export function Section({ children, className, id, fullWidth = false }: SectionProps) {
+export function Section({ children, className, id, fullWidth = false, style }: SectionProps) {
   return (
     <motion.section
       id={id}
@@ -23,6 +25,7 @@ export function Section({ children, className, id, fullWidth = false }: SectionP
         !fullWidth && "section-wrapper",
         className
       )}
+      style={style}
     >
       {children}
     </motion.section>

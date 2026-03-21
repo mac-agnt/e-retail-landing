@@ -3,7 +3,7 @@ export const productsData = {
     id: "cashguard-core",
     title: "CashGuard Core",
     price: "€12.5K",
-    image: "/images/cashguard-core.jpeg",
+    image: "/images/cashguard-core.png",
     shortDescription: "New generation CashGuard with sleek design and small footprint. Ideal for supermarkets, convenience stores, and forecourts.",
     longDescription: `CashGuard Core is our newest and "smartest" cash management solution. Based on the most popular features of our CashGuard Premium but with a more modern touch, we now offer a slimmed-down version of the Premium, but with the same great core.
 
@@ -39,7 +39,7 @@ CashGuard Core also features a note deposit for extra security on your high deno
     id: "cashguard-premium",
     title: "CashGuard Premium",
     price: "€11.8K",
-    image: "/images/cashguard-premium.jpeg",
+    image: "/images/cashguard-premium.png",
     shortDescription: "500+ installations nationwide. Fastest cash machine technology for note return with dedicated slot for each denomination.",
     longDescription: `Cash handling is often an overlooked part of the retail operation that can have an enormous impact on the entire business.
 
@@ -75,7 +75,7 @@ Not with CashGuard. CashGuard Premium is our flagship solution with 500+ install
     id: "cashprotect-pro",
     title: "CashProtect Pro",
     price: "€11.5K",
-    image: "/images/cashprotect-pro.jpeg",
+    image: "/images/cashprotect-pro.png",
     shortDescription: "Ideal for supermarkets, convenience stores, forecourts, bars and restaurants. Single note slot for acceptance and return.",
     longDescription: `The PRO AS system is a model designed for points of sale where there is a high currency turnover and where the speed of exchange is a fundamental feature for the business.
 
@@ -110,7 +110,7 @@ Perfect for businesses that need reliable, high-capacity cash handling without c
     id: "cashprotect-fusion",
     title: "CashProtect Fusion",
     price: "€8.5K",
-    image: "/images/cashprotect-fusion.jpeg",
+    image: "/images/cashprotect-fusion.png",
     shortDescription: "Perfect for small convenience shops, pharmacy, hospitality. All-in-one note and coin acceptance and return.",
     longDescription: `The new Cash Protect Fusion introduces a revolutionary single-modular device designed for efficient management either by employees or, ideally, by clients themselves. Clients have the autonomy to input bills and coins independently, enhancing convenience and flexibility.
 
@@ -146,7 +146,7 @@ FUSION is the latest launch of the entire e-Retail range, designed for cashier e
     id: "cashmag-mini",
     title: "CashMag Mini",
     price: "€6.5K",
-    image: "/images/cashmag-mini.jpeg",
+    image: "/images/cashmag-mini.png",
     shortDescription: "Ideal for pharmacy, restaurants, and limited space environments. Compact all-in-one solution.",
     longDescription: `Mini is our ultra-compact one-unit cash solution, designed for effortless integration directly on the checkout counter. With its automatic coin feeder and user-friendly interface, the customer handles all transactions independently.
 
@@ -182,7 +182,7 @@ Mini is the perfect fit for cafés, kiosks, pharmacies, and bakeries—anywhere 
     id: "cashguard-uni",
     title: "CashGuard Uni",
     price: "€6.5K",
-    image: "/images/cashguard-uni.jpeg",
+    image: "/images/cashguard-uni.png",
     shortDescription: "Compact front-office cash recycling solution. Accepts, validates, and dispenses both notes and coins.",
     longDescription: `CashGuard Uni is the new compact, simple, and reliable cash management solution. Boost efficiency and enhance security in your store at a low cost. Easy to install, it can be used as a standalone desktop unit or integrated into checkout furniture.
 

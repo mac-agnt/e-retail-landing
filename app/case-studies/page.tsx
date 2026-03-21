@@ -18,7 +18,7 @@ const caseStudies = [
     industry: "Retail",
     location: "Nationwide, Ireland",
     product: "CashGuard Premium",
-    image: "/images/cashguard-premium.jpeg",
+    image: "/images/cashguard-premium.png",
     challenge: "A leading Irish supermarket chain with 45 locations was experiencing significant cash discrepancies, averaging €2,000 per store monthly. End-of-day reconciliation was taking staff over 45 minutes per lane.",
     solution: "We deployed CashGuard Premium units across all checkout lanes in their busiest 20 stores, with full POS integration and centralized reporting.",
     results: [
@@ -39,7 +39,7 @@ const caseStudies = [
     industry: "Healthcare Retail",
     location: "Dublin & Cork",
     product: "CashMag Mini",
-    image: "/images/cashmag-mini.jpeg",
+    image: "/images/cashmag-mini.png",
     challenge: "A group of 8 pharmacies needed a cash management solution that wouldn't take up valuable counter space. Staff were spending too much time on cash handling instead of customer care.",
     solution: "The compact CashMag Mini was perfect for their limited counter space. We installed units at each location with training completed in under 2 hours per store.",
     results: [
@@ -60,7 +60,7 @@ const caseStudies = [
     industry: "Hospitality",
     location: "Galway",
     product: "CashProtect Fusion",
-    image: "/images/cashprotect-fusion.jpeg",
+    image: "/images/cashprotect-fusion.png",
     challenge: "A busy hotel restaurant was struggling with cash security during peak service times. Multiple staff accessing the till led to accountability issues and occasional shortages.",
     solution: "CashProtect Fusion provided secure, user-authenticated cash handling with individual staff accountability and drop-box collection for shift changes.",
     results: [
@@ -99,7 +99,7 @@ export default function CaseStudiesPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6">
-              Customer <span className="text-accent">Success Stories</span>
+              Customer <span className="text-accent-gradient">Success Stories</span>
             </h1>
             <p className="text-lg text-muted">
               See how businesses across Ireland have transformed their cash operations
@@ -148,7 +148,7 @@ export default function CaseStudiesPage() {
                 {study.title}
               </h2>
               <div className="flex gap-2">
-                <span className="px-3 py-1 bg-accent/10 rounded-full text-sm text-accent">
+                <span className="px-3 py-1 bg-accent/10 rounded-full text-sm text-accent-gradient">
                   {study.industry}
                 </span>
                 <span className="px-3 py-1 bg-panel-2 rounded-full text-sm text-muted">
@@ -170,7 +170,7 @@ export default function CaseStudiesPage() {
                   />
                 </div>
                 <div className="text-sm text-muted">
-                  Product used: <span className="text-accent font-semibold">{study.product}</span>
+                  Product used: <span className="text-accent-gradient font-semibold">{study.product}</span>
                 </div>
               </div>
 
@@ -191,7 +191,7 @@ export default function CaseStudiesPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
               {study.results.map((result, i) => (
                 <BeveledPanel key={i} className="p-6 text-center">
-                  <div className="text-3xl font-bold text-accent mb-1">
+                  <div className="text-3xl font-bold text-accent-gradient mb-1">
                     {result.metric}
                   </div>
                   <div className="text-sm text-muted">{result.label}</div>

@@ -1,7 +1,9 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 import { WhoWeHelp } from "@/components/who-we-help";
-import { ProductGrid } from "@/components/product-grid";
+import { ProductGridApple } from "@/components/sections/ProductGridApple";
+import { SupportSection } from "@/components/sections/SupportSection";
 import { KpiStrip } from "@/components/kpi-strip";
 import { Footer } from "@/components/footer";
 
@@ -11,8 +13,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <HeroSlideshow />
         <WhoWeHelp />
-        <ProductGrid />
+        <ProductGridApple />
+        <SupportSection />
         <KpiStrip />
       </main>
       <Footer />

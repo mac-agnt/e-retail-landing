@@ -35,7 +35,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="min-h-screen bg-bg antialiased">{children}</body>
+      <body className="min-h-screen bg-bg antialiased">
+        {children}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 z-[1] site-grain"
+        />
+      </body>
     </html>
   );
 }
