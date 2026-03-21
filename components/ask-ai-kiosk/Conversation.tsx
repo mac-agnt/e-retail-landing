@@ -11,23 +11,23 @@ const messages = [
 
 export function Conversation() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="section-wrapper">
+    <section className="py-20 md:py-28">
+      <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-[#111111] md:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight leading-[1.08] text-[#111111] md:text-[2rem]">
             Conversations that guide, not distract.
           </h2>
-          <p className="mt-3 text-black/60">
+          <p className="mx-auto mt-3 max-w-xl text-black/60">
             Every response stays focused on what shoppers need in that exact moment.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl rounded-[28px] border border-black/10 bg-white/75 p-4 backdrop-blur-sm md:p-7">
-          <div className="space-y-3 md:space-y-4">
+        <div className="mx-auto mt-12 max-w-3xl rounded-[30px] border border-black/10 bg-white/75 p-5 backdrop-blur-sm md:p-8">
+          <div className="space-y-4 md:space-y-5">
             {messages.map((message, idx) => (
               <div
                 key={`${message.text}-${idx}`}
-                className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm text-black/80 shadow-[0_6px_20px_rgba(0,0,0,0.05)] md:text-base ${
+                className={`max-w-[85%] rounded-[20px] px-4 py-3 text-sm text-black/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] md:text-[15px] ${
                   message.from === "user"
                     ? "ml-auto bg-[#f0f0ee]"
                     : "mr-auto border border-black/10 bg-white"
@@ -40,7 +40,7 @@ export function Conversation() {
           </div>
         </div>
 
-        <div className="mx-auto mt-14 h-px max-w-5xl bg-black/10" />
+        <div className="mx-auto mt-16 h-px max-w-5xl bg-black/10" />
       </div>
     </section>
   );

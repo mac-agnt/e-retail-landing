@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Gauge, Target, Shield } from "lucide-react";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const featureCards = [
   {
@@ -73,6 +74,14 @@ export function WhoWeHelp() {
               transition={{ duration: 0.4, delay: index * 0.06 }}
               className="group relative overflow-hidden rounded-2xl border border-zinc-200/90 bg-[#f7f7f8] px-6 py-7 shadow-[0_14px_28px_-20px_rgba(15,23,42,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-[0_20px_38px_-22px_rgba(15,23,42,0.32),0_0_0_1px_rgba(220,38,38,0.08),0_0_14px_rgba(220,38,38,0.12)]"
             >
+              <GlowingEffect
+                disabled={false}
+                proximity={72}
+                spread={40}
+                borderWidth={2}
+                inactiveZone={0.24}
+                movementDuration={0.3}
+              />
               <card.icon className="h-5 w-5 text-zinc-700 mb-5" strokeWidth={1.6} />
               <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
                 {card.title}

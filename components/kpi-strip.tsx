@@ -13,9 +13,11 @@ export function KpiStrip() {
       fullWidth
       className="relative overflow-hidden py-14 md:py-20"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/e-retail%20abstract%20background.png')" }}
+      <img
+        src="/Untitled%20design%20(1).gif"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0.08)_46%,rgba(255,255,255,0.16))]" />
 

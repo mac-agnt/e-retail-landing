@@ -37,18 +37,18 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="section-wrapper">
+    <section className="py-20 md:py-28">
+      <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-[#111111] md:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight leading-[1.08] text-[#111111] md:text-[2rem]">
             Built for modern retail floors.
           </h2>
         </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <article
               key={feature.title}
-              className="group rounded-2xl border border-black/10 bg-white/70 p-6 backdrop-blur-sm shadow-[0_10px_28px_rgba(0,0,0,0.05)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(0,0,0,0.08)]"
+              className="group rounded-[22px] border border-black/10 bg-white/70 p-7 backdrop-blur-sm shadow-[0_8px_20px_rgba(0,0,0,0.04)] transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_12px_26px_rgba(0,0,0,0.06)]"
             >
               <feature.icon className="h-5 w-5 text-[#1f1f1f]" strokeWidth={1.8} />
               <h3 className="mt-4 text-lg font-semibold tracking-tight text-[#111111]">{feature.title}</h3>

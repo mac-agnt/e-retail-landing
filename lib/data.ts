@@ -2,6 +2,7 @@ import { Zap, Shield, Target, Clock, TrendingUp, Users } from "lucide-react";
 
 export const navItems = [
   { label: "Products", href: "/products" },
+  { label: "Ask-Ai", href: "/ask-ai" },
   { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Support", href: "/support" },

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { productsData } from "@/lib/products-data";
 
 type ProductTileConfig = {
@@ -111,6 +112,14 @@ export function ProductGridApple() {
               key={product.id}
               className="group relative overflow-hidden rounded-[28px] border border-zinc-200/85 bg-white/55 px-7 py-8 md:px-9 md:py-10 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-accent/25 hover:bg-white/70 hover:shadow-xl"
             >
+              <GlowingEffect
+                disabled={false}
+                proximity={80}
+                spread={44}
+                borderWidth={2}
+                inactiveZone={0.2}
+                movementDuration={0.3}
+              />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_82%,rgba(142,31,36,0.1),transparent_56%)] opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
               <div className="relative z-10 flex h-[260px] items-center justify-center md:h-[300px]">

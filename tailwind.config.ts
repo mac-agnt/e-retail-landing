@@ -39,7 +39,7 @@ const config: Config = {
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         "kiosk-float": "kiosk-float 6s ease-in-out infinite",
         "micro-drift-fade": "micro-drift-fade 7s ease-in-out infinite",
-        "line-pulse": "line-pulse 4s linear infinite",
+        "line-pulse": "line-pulse 6s ease-in-out infinite",
         "page-fade": "page-fade 300ms ease-out both",
       },
       keyframes: {
