@@ -1,60 +1,100 @@
 "use client";
 
-import { Languages, MessageSquare, ScanLine, Search, ShieldCheck, Sparkles } from "lucide-react";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
+import { Clock, Languages, LayoutGrid, MessageCircle } from "lucide-react";
+
+const FeaturesKioskScene = dynamic(
+  () => import("./KioskModel").then((mod) => mod.FeaturesKioskScene),
+  { ssr: false }
+);
 
 const features = [
   {
-    icon: MessageSquare,
-    title: "Natural Store Dialogue",
-    description: "Answers in clear language that feels human and direct.",
+    icon: MessageCircle,
+    title: "Instant assistance",
+    description: "Answers customer questions the moment they're asked.",
   },
   {
-    icon: Search,
-    title: "Instant Product Discovery",
-    description: "Find location, alternatives, and details in seconds.",
+    icon: Clock,
+    title: "Always available",
+    description: "Operates continuously without adding pressure to staff.",
   },
   {
-    icon: ScanLine,
-    title: "Real-Time Availability",
-    description: "Connect shopper questions to live stock confidence.",
+    icon: LayoutGrid,
+    title: "Store-aware intelligence",
+    description: "Understands your products, layout, and policies.",
   },
   {
     icon: Languages,
-    title: "Multilingual Support",
+    title: "Multilingual support",
     description: "Help more people in the language they prefer.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Brand-Safe Responses",
-    description: "Store-trained answers that stay accurate and on-message.",
-  },
-  {
-    icon: Sparkles,
-    title: "Guided Recommendations",
-    description: "Suggest better-fit products to lift shopper outcomes.",
   },
 ];
 
 export function Features() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="relative border-t border-black/[0.06] bg-gradient-to-b from-[#f7f7f5] to-[#f1f0ee] py-16 md:py-24">
       <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight leading-[1.08] text-[#111111] md:text-[2rem]">
-            Built for modern retail floors.
-          </h2>
-        </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <article
-              key={feature.title}
-              className="group rounded-[22px] border border-black/10 bg-white/70 p-7 backdrop-blur-sm shadow-[0_8px_20px_rgba(0,0,0,0.04)] transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_12px_26px_rgba(0,0,0,0.06)]"
-            >
-              <feature.icon className="h-5 w-5 text-[#1f1f1f]" strokeWidth={1.8} />
-              <h3 className="mt-4 text-lg font-semibold tracking-tight text-[#111111]">{feature.title}</h3>
-              <p className="mt-2 text-sm text-black/62">{feature.description}</p>
-            </article>
-          ))}
+        <header className="mx-auto max-w-2xl text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-3xl font-semibold tracking-tight leading-[1.06] text-[#111111] md:text-[2.25rem] md:tracking-[-0.02em]"
+          >
+            Built for <span className="text-accent-gradient">modern retail</span> floors.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.08 }}
+            className="mx-auto mt-4 max-w-xl text-base text-black/62 leading-[1.5]"
+          >
+            Designed to operate seamlessly in real-world retail environments — fast, reliable, and always on.
+          </motion.p>
+        </header>
+
+        <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-end lg:mt-20">
+          {/* Left: black kiosk 3D model, base midway through multilingual card */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative h-[480px] w-full overflow-visible md:h-[560px] lg:mb-6"
+          >
+            <div className="absolute inset-0 overflow-visible">
+              <FeaturesKioskScene />
+            </div>
+          </motion.div>
+
+          {/* Right: feature stack */}
+          <div className="flex flex-col gap-4 md:gap-5">
+            {features.map((feature, index) => (
+              <motion.article
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: 0.08 + index * 0.1 }}
+                className="group rounded-2xl border border-black/[0.06] bg-white/70 px-6 py-5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-[3px] hover:border-accent hover:shadow-[0_8px_28px_rgba(0,0,0,0.06)]"
+              >
+                <feature.icon
+                  className="h-5 w-5 text-[#1f1f1f] transition-colors duration-300 group-hover:text-accent"
+                  strokeWidth={1.6}
+                />
+                <h3 className="mt-4 text-[17px] font-semibold tracking-tight text-[#111111]">
+                  {feature.title}
+                </h3>
+                <p className="mt-1.5 text-[15px] leading-[1.5] text-black/62">
+                  {feature.description}
+                </p>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

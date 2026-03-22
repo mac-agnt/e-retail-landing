@@ -128,3 +128,44 @@
     opacity: 0.04;
   }
 }
+
+/* Conversation section animations */
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.35; transform: scale(0.95); }
+  30% { opacity: 0.75; transform: scale(1); }
+}
+@keyframes conversation-bubble-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes conversation-typing-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Features section ambient glow */
+@keyframes ambient-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Diagram flow animations */
+@keyframes diagram-flow-dot {
+  0% { left: 0; transform: translateY(-50%); }
+  100% { left: 100%; transform: translateY(-50%); }
+}
+@keyframes diagram-flow-vertical {
+  0% { top: 0; opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { top: 100%; opacity: 0.6; }
+}
+@keyframes diagram-node-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+/* Use cases infinite ticker */
+@keyframes use-cases-ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

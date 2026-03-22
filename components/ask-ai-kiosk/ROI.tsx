@@ -1,39 +1,104 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const metrics = [
-  "Reduce staff interruptions",
-  "Increase basket size",
-  "Improve customer confidence",
-  "Modernise experience",
+  { value: "–40%", label: "Fewer staff interruptions", accent: true },
+  { value: "+12%", label: "Higher average basket value", accent: false },
+  { value: "24/7", label: "Always available assistance", accent: false },
+  { value: "<2s", label: "Response time", accent: false },
 ];
 
 export function ROI() {
   return (
-    <section className="bg-[#f1f0ee] py-20 md:py-28">
-      <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-8">
-        <div className="grid items-start gap-12 lg:grid-cols-2">
-          <div>
-            <p className="text-xs uppercase tracking-[0.16em] text-black/52">Commercial Value</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight leading-[1.08] text-[#111111] md:text-[2rem]">
-              Built to improve the floor and the numbers.
-            </h2>
-            <p className="mt-4 max-w-lg text-black/65">
-              Ask AI Kiosk removes decision friction for shoppers while giving teams more time back for selling and service.
-            </p>
+    <section
+      className="relative overflow-hidden py-24 md:py-32"
+      style={{
+        background: "linear-gradient(to bottom, #f3f2ef, #ecebea)",
+      }}
+    >
+      <div className="pointer-events-none absolute inset-0 site-grain" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-30"
+        style={{
+          background: "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(255,255,255,0.4), transparent 60%)",
+        }}
+      />
+
+      <motion.div
+        initial={{ opacity: 0.85 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="relative mx-auto w-full max-w-[1280px] px-6 sm:px-8 lg:px-12"
+      >
+        <div className="grid gap-12 lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-0">
+          {/* Left: messaging */}
+          <div className="lg:pr-16">
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="text-xs font-medium uppercase tracking-[0.18em] text-black/50"
+            >
+              Commercial Value
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.06 }}
+              className="mt-4 text-3xl font-semibold tracking-tight leading-[1.08] text-[#111111] md:text-[2.125rem]"
+            >
+              Built to improve the floor. And the numbers.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.12 }}
+              className="mt-6 max-w-md text-[15px] leading-[1.55] text-black/62"
+            >
+              Reduce interruptions, increase basket value, and operate with more confidence at every checkout.
+            </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {metrics.map((metric) => (
-              <div
-                key={metric}
-                className="rounded-[20px] border border-black/10 bg-white/75 px-6 py-6 text-sm font-medium tracking-tight text-black/78 shadow-[0_4px_14px_rgba(0,0,0,0.03)]"
+          {/* Vertical divider with subtle glow */}
+          <div className="hidden w-px flex-shrink-0 self-stretch px-10 lg:block">
+            <div
+              className="mx-auto h-full w-px"
+              style={{
+                background: "linear-gradient(to bottom, transparent, rgba(0,0,0,0.08) 10%, rgba(0,0,0,0.08) 90%, transparent)",
+                boxShadow: "0 0 24px rgba(220,38,38,0.06)",
+              }}
+            />
+          </div>
+
+          {/* Right: metric blocks */}
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-2 lg:gap-5 lg:pl-16">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={metric.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.12 + index * 0.1 }}
+                className="rounded-xl border border-black/[0.06] bg-white/80 px-6 py-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.05)]"
               >
-                {metric}
-              </div>
+                <p
+                  className={`text-2xl font-bold tracking-tight tabular-nums md:text-[1.75rem] ${
+                    metric.accent ? "text-accent" : "text-[#111111]"
+                  }`}
+                >
+                  {metric.value}
+                </p>
+                <p className="mt-1.5 text-[13px] font-medium text-black/62">{metric.label}</p>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -4,7 +4,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/section";
-import { kpis } from "@/lib/data";
+
+const kpis = [
+  { value: "<2s", label: "Average Ask AI response time on the shop floor" },
+  { value: "24/7", label: "Always-on assistance for every customer question" },
+  { value: "+12%", label: "Higher basket value from guided recommendations" },
+  { value: "–40%", label: "Fewer repetitive questions handled by store staff" },
+];
 
 export function CTA() {
   return (
@@ -31,10 +37,7 @@ export function CTA() {
               <div className="mb-1.5 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight bg-gradient-to-r from-white via-[#fff3e0] to-[#f3ead8] bg-clip-text text-transparent">
                 {kpi.value}
               </div>
-              <div className="mb-1 text-xs md:text-sm font-semibold uppercase tracking-[0.14em] text-white">
-                {kpi.label}
-              </div>
-              <div className="text-xs text-white/90">{kpi.note}</div>
+              <div className="text-xs text-white/90">{kpi.label}</div>
             </motion.div>
           ))}
         </div>
@@ -47,10 +50,10 @@ export function CTA() {
           className="mt-10 flex flex-col items-center justify-center text-center"
         >
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight bg-gradient-to-r from-white via-[#f6e6d2] to-[#e9eaee] bg-clip-text text-transparent">
-            Ready to modernise your cash handling?
+            Give every shopper Ask AI guidance in real time.
           </h2>
           <p className="mt-3 max-w-2xl text-sm md:text-base text-white/82">
-            See how automation can reduce errors, speed up transactions, and keep every till protected.
+            Ask AI Kiosk delivers store-trained answers, product direction, and confident next-best recommendations exactly when customers need them.
           </p>
 
           <Link href="/contact" className="mt-6">
@@ -58,9 +61,10 @@ export function CTA() {
               size="lg"
               className="min-w-[190px] rounded-full border border-white/45 bg-white px-8 text-accent shadow-[0_18px_38px_-22px_rgba(0,0,0,0.45)] hover:bg-[#fffaf2] hover:text-accent"
             >
-              Get in Touch
+              Book an Ask AI demo
             </Button>
           </Link>
+          <p className="mt-3 text-xs text-white/75">See your own store flows in under 15 minutes.</p>
         </motion.div>
       </div>
     </Section>

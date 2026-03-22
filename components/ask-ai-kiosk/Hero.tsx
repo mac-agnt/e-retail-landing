@@ -10,11 +10,11 @@ const KioskScene = dynamic(
 );
 
 const floatingLabels = [
-  { text: "Product Advice", className: "left-[8%] top-[24%] md:left-[16%] md:top-[23%]" },
-  { text: "Store Answers", className: "right-[8%] top-[28%] md:right-[18%] md:top-[25%]" },
-  { text: "Live Stock Check", className: "left-[10%] bottom-[24%] md:left-[20%] md:bottom-[22%]" },
-  { text: "Compare Options", className: "right-[10%] bottom-[26%] md:right-[20%] md:bottom-[24%]" },
-  { text: "Guided Discovery", className: "hidden md:block left-1/2 -translate-x-1/2 top-[14%]" },
+  { text: "Product Advice", className: "left-[2%] top-[22%] md:left-[4%] md:top-[20%]" },
+  { text: "Live Stock Check", className: "left-[2%] top-[42%] md:left-[4%] md:top-[40%]" },
+  { text: "Store Answers", className: "right-[2%] top-[26%] md:right-[4%] md:top-[24%]" },
+  { text: "Compare Options", className: "right-[2%] top-[46%] md:right-[4%] md:top-[44%]" },
+  { text: "Guided Discovery", className: "hidden md:block left-[2%] top-[62%] md:left-[4%] md:top-[60%]" },
 ];
 
 export function Hero() {
@@ -26,34 +26,33 @@ export function Hero() {
       <GridBg />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[65%] bg-[radial-gradient(circle_at_50%_8%,rgba(255,255,255,0.95),rgba(255,255,255,0.42)_46%,transparent_72%)]" />
 
-      {floatingLabels.map((label, i) => (
-        <span
-          key={label.text}
-          className={`pointer-events-none absolute z-10 rounded-full border border-black/8 bg-white/45 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-black/45 backdrop-blur-sm animate-micro-drift-fade ${label.className}`}
-          style={{ animationDelay: `${i * 1.1}s` }}
-        >
-          {label.text}
-        </span>
-      ))}
-
       <div className="relative z-20 mx-auto flex w-full max-w-[1200px] flex-col items-center px-6 sm:px-8">
-        {/* 3D Kiosk container — full height from nav to text */}
+        {/* 3D Kiosk container - pills constrained to this area only */}
         <div
+          className="relative"
           style={{
             width: "100%",
-            height: "calc(100vh - 160px)",
-            minHeight: "500px",
-            position: "relative",
-            marginBottom: "0px",
+            height: "75vh",
+            maxHeight: "680px",
+            minHeight: "460px",
           }}
         >
+          {floatingLabels.map((label, i) => (
+            <span
+              key={label.text}
+              className={`pointer-events-none absolute z-10 rounded-full border border-black/8 bg-white/45 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-black/45 backdrop-blur-sm animate-micro-drift-fade ${label.className}`}
+              style={{ animationDelay: `${i * 1.1}s` }}
+            >
+              {label.text}
+            </span>
+          ))}
           <KioskScene />
         </div>
 
         {/* Headline + CTA */}
-        <div className="relative z-[5] max-w-[680px] pt-8 text-center">
+        <div className="relative z-[5] max-w-[680px] pt-6 text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-[#111111] leading-[1.04] md:text-5xl md:leading-[1.02]">
-            The store, now speaks.
+            The store, now <span className="text-accent-gradient">speaks.</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-base text-black/65">
             Ask AI Kiosk gives every shopper instant, store-trained answers on products, stock, and smart alternatives.
@@ -61,7 +60,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition duration-300 ease-in-out hover:scale-[1.02] hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:ring-offset-2"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-accent px-7 py-3 text-sm font-medium text-white shadow-[0_10px_26px_-14px_rgba(220,38,38,0.8)] transition duration-300 ease-in-out hover:scale-[1.02] hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2"
             >
               Book a Demo
             </Link>
