@@ -27,7 +27,7 @@ export default function AskAiPage() {
   return (
     <>
       <Header />
-      <main className="ask-ai-page animate-page-fade">
+      <main className={`ask-ai-page ${isMobile ? "" : "animate-page-fade"}`}>
         <MotionConfig reducedMotion={isMobile ? "always" : "user"}>
           <Hero />
           <>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, Suspense } from "react";
+import { useEffect, useMemo, useRef, Suspense } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
   RoundedBox,
@@ -141,14 +141,36 @@ const easeInOutCubic = (t: number) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 
 
 const FINAL_SCALE = 0.85;
 
-function KioskHeroScene() {
+function KioskHeroScene({ animate = true }: { animate?: boolean }) {
   const groupRef = useRef<THREE.Group>(null!);
   const whiteRef = useRef<THREE.Group>(null!);
   const blackRef = useRef<THREE.Group>(null!);
   const redRef = useRef<THREE.Group>(null!);
   const startTime = useRef<number | null>(null);
 
+  useEffect(() => {
+    if (animate) return;
+    if (groupRef.current) {
+      groupRef.current.position.y = 0;
+      groupRef.current.rotation.set(0, 0, 0);
+      groupRef.current.scale.setScalar(FINAL_SCALE);
+    }
+    if (whiteRef.current) {
+      whiteRef.current.position.set(0, 0, 0.6);
+      whiteRef.current.rotation.set(0, 0, 0);
+    }
+    if (redRef.current) {
+      redRef.current.position.set(-2.0, 0, -1.4);
+      redRef.current.rotation.set(0, 0.4, 0);
+    }
+    if (blackRef.current) {
+      blackRef.current.position.set(2.0, 0, -1.4);
+      blackRef.current.rotation.set(0, -0.4, 0);
+    }
+  }, [animate]);
+
   useFrame((state) => {
+    if (!animate) return;
     if (startTime.current === null) startTime.current = state.clock.elapsedTime;
     const elapsed = state.clock.elapsedTime - startTime.current;
     const dur = 3.5;
@@ -282,14 +304,20 @@ export function FeaturesKioskScene() {
 }
 
 /* ─── exported scene ─── */
-export function KioskScene() {
+export function KioskScene({
+  animate = true,
+  mobileOptimized = false,
+}: {
+  animate?: boolean;
+  mobileOptimized?: boolean;
+}) {
   return (
     <Canvas
       camera={{ position: [0, 2.0, 10], fov: 30, near: 0.1, far: 100 }}
       style={{ background: "transparent", touchAction: "pan-y" }}
       className="pointer-events-none"
-      shadows
-      dpr={[1, 2]}
+      shadows={!mobileOptimized}
+      dpr={mobileOptimized ? [1, 1.2] : [1, 2]}
       gl={{ antialias: true, alpha: true }}
     >
       <directionalLight position={[6, 7, 5]} intensity={1.0} color="#fff5eb" castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
@@ -298,8 +326,10 @@ export function KioskScene() {
       <ambientLight intensity={0.3} color="#f5f5f5" />
 
       <Suspense fallback={null}>
-        <KioskHeroScene />
-        <ContactShadows position={[0, 0.001, 0]} opacity={0.2} scale={12} blur={2.5} far={4} />
+        <KioskHeroScene animate={animate} />
+        {!mobileOptimized && (
+          <ContactShadows position={[0, 0.001, 0]} opacity={0.2} scale={12} blur={2.5} far={4} />
+        )}
         <Environment preset="studio" />
       </Suspense>
 
