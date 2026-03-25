@@ -333,12 +333,14 @@ export function KioskScene({
         <Environment preset="studio" />
       </Suspense>
 
-      <OrbitControls
-        target={[0, 1.8, -0.5]}
-        enableZoom={false}
-        enablePan={false}
-        enableRotate={false}
-      />
+      {!mobileOptimized && (
+        <OrbitControls
+          target={[0, 1.8, -0.5]}
+          enableZoom={false}
+          enablePan={false}
+          enableRotate={false}
+        />
+      )}
     </Canvas>
   );
 }

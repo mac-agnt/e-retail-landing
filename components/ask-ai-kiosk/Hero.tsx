@@ -60,7 +60,16 @@ export function Hero() {
                 {label.text}
               </span>
             ))}
-          <KioskScene animate={!isMobile} mobileOptimized={isMobile} />
+          {isMobile ? (
+            <img
+              src="/mobile%20ask%20ai%20hero.png"
+              alt="Ask AI Kiosk lineup"
+              className="h-full w-full object-contain select-none"
+              draggable={false}
+            />
+          ) : (
+            <KioskScene animate={!isMobile} mobileOptimized={isMobile} />
+          )}
         </div>
 
         {/* Headline + CTA */}
