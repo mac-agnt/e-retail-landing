@@ -169,3 +169,14 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Mobile performance: reduce heavy motion on Ask AI page */
+@media (max-width: 767px) {
+  .ask-ai-page [class*="animate-"] {
+    animation: none !important;
+  }
+
+  .ask-ai-page [style*="animation"] {
+    animation: none !important;
+  }
+}

@@ -15,12 +15,17 @@ const kpis = [
 export function CTA() {
   return (
     <Section fullWidth className="relative overflow-hidden py-14 md:py-20">
-      <img
-        src="/Untitled%20design%20(1).gif"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-      />
+      <picture className="pointer-events-none absolute inset-0">
+        <source media="(max-width: 767px)" srcSet="/e-retail%20abstract%20background.png" />
+        <img
+          src="/Untitled%20design%20(1).gif"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+      </picture>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0.08)_46%,rgba(255,255,255,0.16))]" />
 
       <div className="section-wrapper relative">

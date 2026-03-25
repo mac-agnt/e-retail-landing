@@ -1,6 +1,7 @@
- "use client";
+"use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { MotionConfig } from "framer-motion";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/ask-ai-kiosk/Hero";
 import { Conversation } from "@/components/ask-ai-kiosk/Conversation";
@@ -12,23 +13,23 @@ import { CTA } from "@/components/ask-ai-kiosk/CTA";
 import { Footer } from "@/components/footer";
 
 export default function AskAiPage() {
-  const [heroReady, setHeroReady] = useState(false);
-
-  const handleHeroReady = useCallback(() => {
-    setHeroReady(true);
-  }, []);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const fallback = window.setTimeout(() => setHeroReady(true), 3000);
-    return () => window.clearTimeout(fallback);
+    const media = window.matchMedia("(max-width: 767px)");
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+
+    setIsMobile(media.matches);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
   }, []);
 
   return (
     <>
       <Header />
-      <main className="animate-page-fade">
-        <Hero onSceneReady={handleHeroReady} />
-        {heroReady && (
+      <main className="ask-ai-page animate-page-fade">
+        <MotionConfig reducedMotion={isMobile ? "always" : "user"}>
+          <Hero />
           <>
             <Conversation />
             <Features />
@@ -37,7 +38,7 @@ export default function AskAiPage() {
             <UseCases />
             <CTA />
           </>
-        )}
+        </MotionConfig>
       </main>
       <Footer />
     </>

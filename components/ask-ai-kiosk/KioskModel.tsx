@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, Suspense } from "react";
+import { useMemo, useRef, Suspense } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
   RoundedBox,
@@ -282,13 +282,7 @@ export function FeaturesKioskScene() {
 }
 
 /* ─── exported scene ─── */
-export function KioskScene({ onReady }: { onReady?: () => void }) {
-  useEffect(() => {
-    if (!onReady) return;
-    const t = window.setTimeout(() => onReady(), 450);
-    return () => window.clearTimeout(t);
-  }, [onReady]);
-
+export function KioskScene() {
   return (
     <Canvas
       camera={{ position: [0, 2.0, 10], fov: 30, near: 0.1, far: 100 }}
