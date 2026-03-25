@@ -52,7 +52,7 @@ export function UseCases() {
 
         {/* Full-bleed ticker: breaks out to viewport edges for edge fades */}
         <div
-          className="relative mt-12 w-screen overflow-hidden md:mt-16"
+          className="relative mt-20 w-screen overflow-hidden md:mt-16"
           style={{ marginLeft: "calc(50% - 50vw)" }}
           role="marquee"
           aria-label="Store types"

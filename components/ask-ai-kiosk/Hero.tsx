@@ -17,7 +17,7 @@ const floatingLabels = [
   { text: "Guided Discovery", className: "hidden md:block left-[2%] top-[62%] md:left-[4%] md:top-[60%]" },
 ];
 
-export function Hero() {
+export function Hero({ onSceneReady }: { onSceneReady?: () => void }) {
   return (
     <section
       className="relative bg-[linear-gradient(180deg,#ffffff_0%,#f7f7f5_48%,#ecebea_100%)] pt-28 pb-20 md:pb-24"
@@ -46,7 +46,7 @@ export function Hero() {
               {label.text}
             </span>
           ))}
-          <KioskScene />
+          <KioskScene onReady={onSceneReady} />
         </div>
 
         {/* Headline + CTA */}

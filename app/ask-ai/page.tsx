@@ -1,3 +1,6 @@
+ "use client";
+
+import { useCallback, useEffect, useState } from "react";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/ask-ai-kiosk/Hero";
 import { Conversation } from "@/components/ask-ai-kiosk/Conversation";
@@ -9,17 +12,32 @@ import { CTA } from "@/components/ask-ai-kiosk/CTA";
 import { Footer } from "@/components/footer";
 
 export default function AskAiPage() {
+  const [heroReady, setHeroReady] = useState(false);
+
+  const handleHeroReady = useCallback(() => {
+    setHeroReady(true);
+  }, []);
+
+  useEffect(() => {
+    const fallback = window.setTimeout(() => setHeroReady(true), 3000);
+    return () => window.clearTimeout(fallback);
+  }, []);
+
   return (
     <>
       <Header />
       <main className="animate-page-fade">
-        <Hero />
-        <Conversation />
-        <Features />
-        <Diagram />
-        <ROI />
-        <UseCases />
-        <CTA />
+        <Hero onSceneReady={handleHeroReady} />
+        {heroReady && (
+          <>
+            <Conversation />
+            <Features />
+            <Diagram />
+            <ROI />
+            <UseCases />
+            <CTA />
+          </>
+        )}
       </main>
       <Footer />
     </>

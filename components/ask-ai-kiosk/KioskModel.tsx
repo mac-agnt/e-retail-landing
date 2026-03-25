@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, Suspense } from "react";
+import { useEffect, useMemo, useRef, Suspense } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
   RoundedBox,
@@ -257,7 +257,8 @@ export function FeaturesKioskScene() {
   return (
     <Canvas
       camera={{ position: [0, FEATURES_KIOSK_CENTER_Y, 13.5], fov: 34, near: 0.1, far: 100 }}
-      style={{ background: "transparent", touchAction: "none" }}
+      style={{ background: "transparent", touchAction: "pan-y" }}
+      className="pointer-events-none"
       dpr={[1, 2]}
       gl={{ antialias: true, alpha: true }}
     >
@@ -281,11 +282,18 @@ export function FeaturesKioskScene() {
 }
 
 /* ─── exported scene ─── */
-export function KioskScene() {
+export function KioskScene({ onReady }: { onReady?: () => void }) {
+  useEffect(() => {
+    if (!onReady) return;
+    const t = window.setTimeout(() => onReady(), 450);
+    return () => window.clearTimeout(t);
+  }, [onReady]);
+
   return (
     <Canvas
       camera={{ position: [0, 2.0, 10], fov: 30, near: 0.1, far: 100 }}
-      style={{ background: "transparent", touchAction: "auto" }}
+      style={{ background: "transparent", touchAction: "pan-y" }}
+      className="pointer-events-none"
       shadows
       dpr={[1, 2]}
       gl={{ antialias: true, alpha: true }}
