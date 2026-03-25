@@ -179,4 +179,9 @@
   .ask-ai-page [style*="animation"] {
     animation: none !important;
   }
+
+  .ask-ai-page canvas {
+    pointer-events: none !important;
+    touch-action: pan-y !important;
+  }
 }
