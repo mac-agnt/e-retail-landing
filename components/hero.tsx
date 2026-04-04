@@ -42,10 +42,6 @@ export function Hero() {
         >
           e-Retail&apos;s automated cash systems eliminate till discrepancies,{" "}
           <span className="text-zinc-700">cut cash-handling labour by 80%</span>
-          , and{" "}
-          <span className="text-zinc-700">
-            pay for themselves in under 18 months
-          </span>
           .{" "}
           <span className="text-zinc-700">
             Trusted by 500+ stores across Ireland
@@ -94,14 +90,6 @@ export function Hero() {
       </div>
     </div>
   );
-
-  if (isMobile) {
-    return (
-      <section className="relative min-h-screen pt-20 bg-bg flex items-center justify-center">
-        {content}
-      </section>
-    );
-  }
 
   return (
     <section className="relative">

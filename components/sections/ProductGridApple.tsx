@@ -160,7 +160,7 @@ export function ProductGridApple() {
                       size="lg"
                       className="rounded-full bg-accent px-7 text-white shadow-[0_10px_26px_-14px_rgba(220,38,38,0.8)] hover:bg-accent/90"
                     >
-                      Buy now
+                      Contact us
                     </Button>
                   </Link>
                   <Link href={product.exploreHref}>

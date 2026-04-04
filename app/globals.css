@@ -117,6 +117,23 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ff6f6f] via-[#e63333] to-[#a3151b];
   }
 
+  /* Richer multi-stop gradient for hero-style headings (e.g. VSL section) */
+  .text-gradient-premium {
+    color: transparent;
+    background-image: linear-gradient(
+      128deg,
+      #991b1b 0%,
+      #b91c1c 14%,
+      #dc2626 32%,
+      #e11d48 48%,
+      #be123c 62%,
+      #9f1239 82%,
+      #7f1d1d 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
   /* Subtle text shadow */
   .text-shadow {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

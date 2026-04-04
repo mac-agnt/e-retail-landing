@@ -1,3 +1,10 @@
+/** Optional per-product media; omit for placeholder video until assets exist */
+export type ProductWrittenTestimonial = {
+  quote: string;
+  /** e.g. role and company — use placeholders until real copy is approved */
+  roleLine?: string;
+};
+
 export const productsData = {
   "cashguard-core": {
     id: "cashguard-core",
@@ -34,6 +41,7 @@ CashGuard Core also features a note deposit for extra security on your high deno
     manufacturer: "StrongPoint",
     manufacturerNote: "CashGuard is developed by the Norwegian retail technology company StrongPoint. With more than 20 years experience and more than 35,000 sold systems, it is the market-leading cash management solution.",
     relatedProducts: ["cashguard-premium", "cashprotect-fusion"],
+    videoTestimonialSrc: "/videos/20260223_111140.mp4",
   },
   "cashguard-premium": {
     id: "cashguard-premium",
@@ -177,6 +185,7 @@ Mini is the perfect fit for cafés, kiosks, pharmacies, and bakeries—anywhere 
     manufacturer: "e-Retail",
     manufacturerNote: "E-Retail has deployed multiple installations across different sectors in Ireland, including petrol stations, supermarkets, convenience stores, hospitality venues, pharmacies, and various other sectors.",
     relatedProducts: ["cashguard-uni", "cashprotect-fusion"],
+    videoTestimonialSrc: "/videos/20260223_112016.mp4",
   },
   "cashguard-uni": {
     id: "cashguard-uni",
@@ -215,8 +224,12 @@ Full service access is provided through telescopic, slide-mounted inner modules.
     manufacturer: "StrongPoint",
     manufacturerNote: "CashGuard is developed by the Norwegian retail technology company StrongPoint. With more than 20 years experience and more than 35,000 sold systems, it is the market-leading cash management solution.",
     relatedProducts: ["cashmag-mini", "cashprotect-fusion"],
+    videoTestimonialSrc: "/videos/20260223_111354.mp4",
   },
 };
 
-export type ProductData = typeof productsData[keyof typeof productsData];
+export type ProductData = typeof productsData[keyof typeof productsData] & {
+  videoTestimonialSrc?: string;
+  writtenTestimonials?: ProductWrittenTestimonial[];
+};
 export const productSlugs = Object.keys(productsData) as Array<keyof typeof productsData>;

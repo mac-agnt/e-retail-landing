@@ -12,18 +12,18 @@ export const navItems = [
 export const benefits = [
   {
     icon: Zap,
-    title: "Speed",
-    text: "Process transactions in under 20 seconds with automated cash handling that keeps lines moving.",
+    title: "Throughput",
+    text: "Move customers through the till faster without bottlenecks or manual delays.",
   },
   {
     icon: Target,
-    title: "Zero Till Discrepancies",
-    text: "Eliminate human error with precise automated counting and secure cash storage systems.",
+    title: "Accuracy",
+    text: "Reduce discrepancies with automated cash validation and controlled handling.",
   },
   {
     icon: Shield,
     title: "Security",
-    text: "Bank-grade security with real-time monitoring, tamper detection, and encrypted data transmission.",
+    text: "Limit exposure with closed cash handling and controlled access.",
   },
 ];
 
@@ -82,26 +82,23 @@ export const products = [
   },
 ];
 
+/** Homepage KPI strip: outcome-led copy, no unverified performance numbers */
 export const kpis = [
   {
-    value: "98%",
-    label: "Reduction in Discrepancies",
-    note: "Compared to traditional cash handling",
+    headline: "Significantly fewer discrepancies",
+    subline: "Automated cash validation reduces human error at the till",
   },
   {
-    value: "20s",
-    label: "Faster Per Customer",
-    note: "Average transaction time saved",
+    headline: "Faster transaction handling",
+    subline: "Streamlined note and coin processing improves checkout flow",
   },
   {
-    value: "500+",
-    label: "Installations",
-    note: "Nationwide across Ireland",
+    headline: "500+ Installations",
+    subline: "Trusted by retailers across Ireland",
   },
   {
-    value: "24/7",
-    label: "Support Available",
-    note: "Full installation & maintenance",
+    headline: "24/7 Support Available",
+    subline: "Full installation, training & maintenance included",
   },
 ];
 
@@ -149,7 +146,7 @@ export const footerLinks = {
 };
 
 export const trustBullets = [
-  "Up to 98% reduction in cash shrinkage",
-  "20 seconds faster per customer transaction",
+  "Fewer discrepancies with automated cash validation",
+  "Faster transaction handling at the till",
   "Full installation, training & 24/7 support",
 ];

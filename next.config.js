@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Avoid stale/missing vendor chunks for framer-motion after interrupted builds or cache issues
+  transpilePackages: ["framer-motion"],
   images: {
     domains: [],
     unoptimized: false,

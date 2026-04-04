@@ -9,18 +9,20 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const featureCards = [
   {
-    title: "Speed",
-    outcome: "Transactions completed in under 20 seconds.",
+    title: "Throughput",
+    outcome:
+      "Move customers through the till faster without bottlenecks or manual delays.",
     icon: Gauge,
   },
   {
-    title: "Zero Discrepancies",
-    outcome: "Eliminate human error with automated accuracy.",
+    title: "Accuracy",
+    outcome:
+      "Reduce discrepancies with automated cash validation and controlled handling.",
     icon: Target,
   },
   {
     title: "Security",
-    outcome: "Bank-grade protection with real-time monitoring.",
+    outcome: "Limit exposure with closed cash handling and controlled access.",
     icon: Shield,
   },
 ];
@@ -114,7 +116,7 @@ export function WhoWeHelp() {
               size="lg"
               className="rounded-full bg-accent px-7 text-white shadow-[0_10px_26px_-14px_rgba(220,38,38,0.8)] hover:bg-accent/90"
             >
-              Buy now
+              Contact us
             </Button>
           </Link>
         </motion.div>

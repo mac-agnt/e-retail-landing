@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { VslExplainerSection } from "@/components/sections/vsl-explainer-section";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 import { WhoWeHelp } from "@/components/who-we-help";
 import { ProductGridApple } from "@/components/sections/ProductGridApple";
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <VslExplainerSection />
         <HeroSlideshow />
         <WhoWeHelp />
         <ProductGridApple />
