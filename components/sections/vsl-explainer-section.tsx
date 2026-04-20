@@ -1,42 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 import { ProductPageHeading } from "@/components/product";
 import { cn } from "@/lib/utils";
 
-/**
- * Premium 16:9 shell for a future VSL embed. Replace the inner placeholder with
- * an iframe, React Player, or <video>; keep the outer classes for aspect + radius.
- */
-function VslVideoPlaceholder({ className }: { className?: string }) {
+const VSL_EXPLAINER_SRC = "/videos/20260223_112016.mp4";
+
+/** 16:9 explainer video (homepage VSL block). */
+function VslExplainerVideo({ className }: { className?: string }) {
   return (
     <div
       id="vsl-embed-slot"
       className={cn(
         "relative w-full overflow-hidden rounded-xl border border-border",
-        "aspect-video bg-gradient-to-br from-panel-2 via-panel to-bg",
+        "aspect-video bg-black",
         "shadow-[0_1px_0_rgba(0,0,0,0.06)_inset,0_12px_40px_-18px_rgba(0,0,0,0.12)]",
         className
       )}
     >
-      {/* Swap this inner block for embedded VSL when ready */}
-      <div
-        className="flex h-full w-full flex-col items-center justify-center gap-5 px-6 text-center"
-        role="region"
-        aria-label="Explainer video placeholder. Video coming soon."
+      <video
+        src={VSL_EXPLAINER_SRC}
+        controls
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover"
+        aria-label="e-Retail explainer video"
       >
-        <div className="flex h-16 w-16 items-center justify-center rounded-full border border-border bg-bg/90 text-accent shadow-sm ring-1 ring-black/[0.04]">
-          <Play className="h-7 w-7 fill-current pl-1" aria-hidden />
-        </div>
-        <div>
-          <p className="text-base font-semibold text-text">Explainer video coming soon</p>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted">
-            Full walkthrough of the e-Retail approach for your trading environment, available here
-            soon.
-          </p>
-        </div>
-      </div>
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }
@@ -71,7 +62,7 @@ export function VslExplainerSection() {
             transition={{ duration: 0.5, delay: 0.06, ease: "easeOut" }}
             className="col-start-1 row-start-2 min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:sticky lg:top-28"
           >
-            <VslVideoPlaceholder />
+            <VslExplainerVideo />
           </motion.div>
 
           <motion.div
