@@ -77,41 +77,51 @@ Not with CashGuard. CashGuard Premium is our flagship solution with 500+ install
     ],
     manufacturer: "StrongPoint",
     manufacturerNote: "CashGuard is developed by the Norwegian retail technology company StrongPoint. With more than 20 years experience and more than 35,000 sold systems, it is the market-leading cash management solution.",
-    relatedProducts: ["cashguard-core", "cashprotect-pro"],
+    relatedProducts: ["cashguard-core", "cashprotect-touch"],
   },
-  "cashprotect-pro": {
-    id: "cashprotect-pro",
-    title: "CashProtect Pro",
+  "cashprotect-touch": {
+    id: "cashprotect-touch",
+    title: "CashProtect Touch",
     price: "€11.5K",
-    image: "/images/cashprotect-pro.png",
-    shortDescription: "Ideal for supermarkets, convenience stores, forecourts, bars and restaurants. Single note slot for acceptance and return.",
-    longDescription: `The PRO AS system is a model designed for points of sale where there is a high currency turnover and where the speed of exchange is a fundamental feature for the business.
+    image: "/images/cashprotect-touch.png",
+    shortDescription:
+      "Compact automated cash handling for faster service, tighter control, and smaller counter footprints.",
+    longDescription: `Secure, compact cash handling with full control at the counter.
 
-This model is the one that satisfies all the needs of a chain of stores in which there is a large volume of operations and a high cash capacity is needed to support full opening hours.
+CashProtect Touch is a compact integrated cash management system for businesses that want dependable automation at the till without a bulky installation. It keeps service fast, balances accurate, and cash levels visible, so teams spend less time firefighting shortages and more time serving customers.
 
-Perfect for businesses that need reliable, high-capacity cash handling without compromise.`,
+Monitored cash levels and streamlined balancing help you avoid running short on change. Automated validation and reporting support more reliable end-of-shift balances with less manual investigation.
+
+Customers follow an intuitive guided payment flow: light cues, iconography, and display prompts make each step obvious. The system accepts, validates, recycles, and pays out all euro coin denominations from €0.01 through €2.00.
+
+Installation adapts to attended or unattended lanes and can be integrated into counter builds. Closed handling and controlled access limit common note and coin fraud patterns and keep staff focused on the customer. The platform can be configured for multi-currency acceptance where your operating model requires it.`,
     dimensions: {
-      noteUnit: { width: "490mm", height: "350mm", depth: "590mm", weight: "35Kg" },
-      coinUnit: { width: "280mm", height: "450mm", depth: "350mm", weight: "25Kg" },
+      combined: { width: "490mm", height: "300mm", depth: "590mm", weight: "30Kg" },
     },
-    idealFor: ["Supermarkets", "Convenience stores", "Forecourts", "Bars", "Restaurants", "High-volume retail"],
+    idealFor: ["Pharmacies", "Compact counters", "Convenience stores"],
     features: [
-      "Single Note slot for acceptance and return",
-      "Open Chute/Multi coin bowl for coin deposit",
-      "Drop box and cassette collection",
-      "High cash capacity for full opening hours",
-      "Designed for high currency turnover",
-      "Speed of exchange optimized",
+      "Compact integrated format for minimal counter footprint",
+      "Secure automated cash handling with controlled access",
+      "Monitored cash levels and faster balancing to reduce change shortages",
+      "Automated validation and reporting for more reliable balance control",
+      "Guided payment flow with light cues, iconography, and display prompts",
+      "Accepts, validates, recycles, and pays out all euro coins from €0.01 to €2.00",
+      "Adaptable for attended or unattended operation; integrates into counter furniture",
+      "Tighter control of note and coin fraud exposure; staff stay customer-facing",
+      "Configurable multi-currency acceptance for mixed trading environments",
     ],
     benefits: [
-      "Handles high transaction volumes",
-      "Supports full-day operations",
-      "Secure drop box collection",
-      "Fast and efficient exchanges",
-      "Suitable for chain deployments",
+      "Smaller footprint without giving up automation",
+      "Less time on manual counts and cash investigations at close",
+      "Clearer customer payment steps with fewer errors at the till",
+      "Reliable euro coin recycling across the full denomination range",
+      "Flexible deployment for how you run the lane",
+      "Lower exposure to common cash fraud patterns",
+      "Ready for multi-currency when your model requires it",
     ],
     manufacturer: "e-Retail",
-    manufacturerNote: "E-Retail has deployed multiple installations across different sectors in Ireland, including petrol stations, supermarkets, convenience stores, hospitality venues, pharmacies, and various other sectors.",
+    manufacturerNote:
+      "E-Retail supplies and supports CashProtect Touch across Ireland. Footprint and integration details are confirmed with each project; certified drawings are supplied with your quotation.",
     relatedProducts: ["cashguard-premium", "cashprotect-fusion"],
   },
   "cashprotect-fusion": {

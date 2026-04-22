@@ -27,7 +27,7 @@ const industries = [
       "Real-time cash position reporting",
       "Secure closed cash handling with audit trails",
     ],
-    products: ["CashGuard Core", "CashGuard Premium", "CashProtect Pro"],
+    products: ["CashGuard Core", "CashGuard Premium", "CashProtect Touch"],
     stats: { value: "500+", label: "Retail installations nationwide" },
   },
   {
@@ -87,7 +87,7 @@ const industries = [
       "Real-time monitoring and alerts",
       "Fast end-of-day reconciliation",
     ],
-    products: ["CashGuard Premium", "CashProtect Pro", "CashGuard Core"],
+    products: ["CashGuard Premium", "CashProtect Touch", "CashGuard Core"],
     stats: { value: "24/7", label: "Support and monitoring available" },
   },
 ];

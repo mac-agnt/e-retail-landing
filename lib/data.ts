@@ -53,10 +53,10 @@ export const products = [
     price: "€11.8K",
   },
   {
-    title: "CashProtect Pro",
-    blurb: "Ideal for supermarkets, convenience stores, forecourts, bars and restaurants. Single note slot for acceptance and return.",
-    image: "/images/cashprotect-pro.png",
-    href: "/products/cashprotect-pro",
+    title: "CashProtect Touch",
+    blurb: "Compact automated cash handling for faster service, tighter control, and smaller counter footprints.",
+    image: "/images/cashprotect-touch.png",
+    href: "/products/cashprotect-touch",
     price: "€11.5K",
   },
   {
@@ -120,7 +120,7 @@ export const footerLinks = {
   products: [
     { label: "CashGuard Core", href: "/products/cashguard-core" },
     { label: "CashGuard Premium", href: "/products/cashguard-premium" },
-    { label: "CashProtect Pro", href: "/products/cashprotect-pro" },
+    { label: "CashProtect Touch", href: "/products/cashprotect-touch" },
     { label: "CashProtect Fusion", href: "/products/cashprotect-fusion" },
     { label: "CashMag Mini", href: "/products/cashmag-mini" },
     { label: "CashGuard Uni", href: "/products/cashguard-uni" },

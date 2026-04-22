@@ -10,7 +10,7 @@ type ProductTileConfig = {
   id:
     | "cashguard-core"
     | "cashguard-premium"
-    | "cashprotect-pro"
+    | "cashprotect-touch"
     | "cashprotect-fusion"
     | "cashmag-mini"
     | "cashguard-uni";
@@ -34,11 +34,11 @@ const productGridData: ProductTileConfig[] = [
     categories: ["Supermarkets", "Forecourts", "High-Volume Retail"],
   },
   {
-    id: "cashprotect-pro",
-    title: "CashProtect Pro",
+    id: "cashprotect-touch",
+    title: "CashProtect Touch",
     explainer:
-      "Secure, efficient note and cash handling built for faster service.",
-    categories: ["Hospitality", "Convenience Stores", "Front-of-House"],
+      "Compact automated cash handling for faster service, tighter control, and smaller counter footprints.",
+    categories: ["Pharmacies", "Compact Counters", "Convenience Stores"],
   },
   {
     id: "cashprotect-fusion",

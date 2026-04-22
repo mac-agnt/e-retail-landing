@@ -10,6 +10,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/products/cashprotect-pro",
+        destination: "/products/cashprotect-touch",
+        permanent: true,
+      },
+      {
         source: "/roi-calculator",
         destination: "/contact",
         permanent: true,

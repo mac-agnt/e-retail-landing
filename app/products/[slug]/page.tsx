@@ -93,7 +93,7 @@ export default function ProductPage() {
                 />
                 <Image
                   src={product.image}
-                  alt={product.title}
+                  alt={`${product.title} automated cash management system`}
                   fill
                   className="object-contain drop-shadow-2xl"
                   priority
@@ -200,7 +200,7 @@ export default function ProductPage() {
                     <div className="relative aspect-square mb-4 max-h-[220px] mx-auto">
                       <Image
                         src={related.image}
-                        alt={related.title}
+                        alt={`${related.title} automated cash management system`}
                         fill
                         className="object-contain group-hover:scale-[1.02] transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, 33vw"
