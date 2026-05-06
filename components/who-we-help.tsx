@@ -62,6 +62,12 @@ export function WhoWeHelp() {
             Built to eliminate errors, accelerate transactions, and secure every
             euro.
           </p>
+          <p className="mt-4 text-base text-zinc-600 md:text-lg">
+            e-Retail provide solutions that match your environment and meet your
+            budget. From the fastest (Strongpoint CORE) solution on the market
+            to the smallest (Cashmag MINI), we can help you in time savings and
+            security.
+          </p>
         </motion.div>
 
         <div className="mx-auto mt-10 h-px w-20 bg-zinc-300/80" />

@@ -48,16 +48,6 @@ export function SupportSection() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.1, ease: "easeOut" }}
-              className="mt-2.5 max-w-2xl text-base text-zinc-600"
-            >
-              When something stops, we don&apos;t schedule it. We solve it.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
               className="mt-5 text-7xl lg:text-[96px] leading-[0.9] tracking-tight font-semibold bg-gradient-to-r from-[#ff6f6f] via-[#e63333] to-[#a3151b] bg-clip-text text-transparent italic"
             >
@@ -71,7 +61,7 @@ export function SupportSection() {
               transition={{ duration: 0.45, delay: 0.3, ease: "easeOut" }}
               className="mt-0.5 text-5xl lg:text-[64px] leading-[0.95] tracking-tight font-medium bg-gradient-to-r from-[#ff6f6f] via-[#e63333] to-[#a3151b] bg-clip-text text-transparent italic"
             >
-              364 days a year.
+              363 days a year.
             </motion.p>
           </div>
 
@@ -123,15 +113,6 @@ export function SupportSection() {
               </div>
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.5, ease: "easeOut" }}
-              className="text-base text-black/55 mt-6"
-            >
-              When your tills stop, we&apos;re already on the way.
-            </motion.p>
           </div>
         </div>
       </div>

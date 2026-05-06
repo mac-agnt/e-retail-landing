@@ -9,7 +9,7 @@ export const productsData = {
   "cashguard-core": {
     id: "cashguard-core",
     title: "CashGuard Core",
-    price: "€12.5K",
+    price: "€12K",
     image: "/images/cashguard-core.png",
     shortDescription: "New generation CashGuard with sleek design and small footprint. Ideal for supermarkets, convenience stores, and forecourts.",
     longDescription: `CashGuard Core is our newest and "smartest" cash management solution. Based on the most popular features of our CashGuard Premium but with a more modern touch, we now offer a slimmed-down version of the Premium, but with the same great core.
@@ -41,7 +41,7 @@ CashGuard Core also features a note deposit for extra security on your high deno
     manufacturer: "StrongPoint",
     manufacturerNote: "CashGuard is developed by the Norwegian retail technology company StrongPoint. With more than 20 years experience and more than 35,000 sold systems, it is the market-leading cash management solution.",
     relatedProducts: ["cashguard-premium", "cashprotect-fusion"],
-    videoTestimonialSrc: "/videos/20260223_111140.mp4",
+    videoTestimonialSrc: "/videos/20260223_111140_h264.mp4",
   },
   "cashguard-premium": {
     id: "cashguard-premium",
@@ -82,7 +82,7 @@ Not with CashGuard. CashGuard Premium is our flagship solution with 500+ install
   "cashprotect-touch": {
     id: "cashprotect-touch",
     title: "CashProtect Touch",
-    price: "€11.5K",
+    price: "€9K",
     image: "/images/cashprotect-touch.png",
     shortDescription:
       "Compact automated cash handling for faster service, tighter control, and smaller counter footprints.",
@@ -121,13 +121,13 @@ Installation adapts to attended or unattended lanes and can be integrated into c
     ],
     manufacturer: "e-Retail",
     manufacturerNote:
-      "E-Retail supplies and supports CashProtect Touch across Ireland. Footprint and integration details are confirmed with each project; certified drawings are supplied with your quotation.",
+      "E-Retail supplies and supports CashProtect Touch across Ireland. Footprint and integration details are confirmed with each project; certified drawings are supplied with your quotation. In product photography and datasheets the CashProtect Touch is also referred to as the CashProtect POS.",
     relatedProducts: ["cashguard-premium", "cashprotect-fusion"],
   },
   "cashprotect-fusion": {
     id: "cashprotect-fusion",
     title: "CashProtect Fusion",
-    price: "€8.5K",
+    price: "€10K",
     image: "/images/cashprotect-fusion.png",
     shortDescription: "Perfect for small convenience shops, pharmacy, hospitality. All-in-one note and coin acceptance and return.",
     longDescription: `The new Cash Protect Fusion introduces a revolutionary single-modular device designed for efficient management either by employees or, ideally, by clients themselves. Clients have the autonomy to input bills and coins independently, enhancing convenience and flexibility.
@@ -170,7 +170,7 @@ FUSION is the latest launch of the entire e-Retail range, designed for cashier e
   "cashmag-mini": {
     id: "cashmag-mini",
     title: "CashMag Mini",
-    price: "€6.5K",
+    price: "€7.5K",
     image: "/images/cashmag-mini.png",
     shortDescription: "Ideal for pharmacy, restaurants, and limited space environments. Compact all-in-one solution.",
     longDescription: `Mini is our ultra-compact one-unit cash solution, designed for effortless integration directly on the checkout counter. With its automatic coin feeder and user-friendly interface, the customer handles all transactions independently.
@@ -202,12 +202,12 @@ Mini is the perfect fit for cafés, kiosks, pharmacies, and bakeries—anywhere 
     manufacturer: "e-Retail",
     manufacturerNote: "E-Retail has deployed multiple installations across different sectors in Ireland, including petrol stations, supermarkets, convenience stores, hospitality venues, pharmacies, and various other sectors.",
     relatedProducts: ["cashguard-uni", "cashprotect-fusion"],
-    videoTestimonialSrc: "/videos/20260223_112016.mp4",
+    videoTestimonialSrc: "/videos/20260223_112016_h264.mp4",
   },
   "cashguard-uni": {
     id: "cashguard-uni",
     title: "CashGuard Uni",
-    price: "€6.5K",
+    price: "€7.5K",
     image: "/images/cashguard-uni.png",
     shortDescription: "Compact front-office cash recycling solution. Accepts, validates, and dispenses both notes and coins.",
     longDescription: `CashGuard Uni is the new compact, simple, and reliable cash management solution. Boost efficiency and enhance security in your store at a low cost. Easy to install, it can be used as a standalone desktop unit or integrated into checkout furniture.
@@ -241,7 +241,7 @@ Full service access is provided through telescopic, slide-mounted inner modules.
     manufacturer: "StrongPoint",
     manufacturerNote: "CashGuard is developed by the Norwegian retail technology company StrongPoint. With more than 20 years experience and more than 35,000 sold systems, it is the market-leading cash management solution.",
     relatedProducts: ["cashmag-mini", "cashprotect-fusion"],
-    videoTestimonialSrc: "/videos/20260223_111354.mp4",
+    videoTestimonialSrc: "/videos/20260223_111354_h264.mp4",
   },
 };
 

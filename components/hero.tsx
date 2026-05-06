@@ -21,16 +21,16 @@ export function Hero() {
 
   const content = (
     <div className="section-wrapper">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-5xl mx-auto text-center">
         <motion.h1
           initial={isMobile ? false : { opacity: 0, y: 20 }}
           animate={isMobile ? undefined : { opacity: 1, y: 0 }}
           transition={isMobile ? undefined : { duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-text leading-tight mb-6"
         >
-          Your Tills Are Leaking Cash.{" "}
+          Save money saving time, giving you more time to{" "}
           <span className="bg-gradient-to-r from-[#ff6f6f] via-[#e63333] to-[#a3151b] bg-clip-text text-transparent">
-            We Stop It.
+            concentrate on your business
           </span>
         </motion.h1>
 
@@ -38,13 +38,11 @@ export function Hero() {
           initial={isMobile ? false : { opacity: 0, y: 20 }}
           animate={isMobile ? undefined : { opacity: 1, y: 0 }}
           transition={isMobile ? undefined : { duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-muted mb-10 max-w-2xl mx-auto"
+          className="text-lg md:text-xl text-muted mb-10 max-w-3xl mx-auto"
         >
-          e-Retail&apos;s automated cash systems eliminate till discrepancies,{" "}
-          <span className="text-zinc-700">cut cash-handling labour by 80%</span>
-          .{" "}
+          e-Retail automated cash management systems mean no overs/no unders and the end of day figures always matching the physical cash. No errors, no discrepancies, no staff stress/no manager stress/no owner stress.{" "}
           <span className="text-zinc-700">
-            Trusted by 500+ stores across Ireland
+            Trusted in 500+ stores across Ireland
           </span>
           .
         </motion.p>

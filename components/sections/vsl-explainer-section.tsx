@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ProductPageHeading } from "@/components/product";
 import { cn } from "@/lib/utils";
 
-const VSL_EXPLAINER_SRC = "/videos/20260223_112016.mp4";
+const VSL_EXPLAINER_SRC = "/videos/aran-islands.mp4";
 
 /** 16:9 explainer video (homepage VSL block). */
 function VslExplainerVideo({ className }: { className?: string }) {

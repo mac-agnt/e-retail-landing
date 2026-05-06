@@ -3,7 +3,6 @@ import { Zap, Shield, Target, Clock, TrendingUp, Users } from "lucide-react";
 export const navItems = [
   { label: "Products", href: "/products" },
   { label: "Ask-Ai", href: "/ask-ai" },
-  { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Support", href: "/support" },
   { label: "Get in Touch", href: "/contact" },
@@ -85,12 +84,12 @@ export const products = [
 /** Homepage KPI strip: outcome-led copy, no unverified performance numbers */
 export const kpis = [
   {
-    headline: "Significantly fewer discrepancies",
-    subline: "Automated cash validation reduces human error at the till",
+    headline: "NO overs or unders!",
+    subline: "End of day figures always match the physical cash",
   },
   {
-    headline: "Faster transaction handling",
-    subline: "Streamlined note and coin processing improves checkout flow",
+    headline: "NO Errors",
+    subline: "Automated validation removes human error at the till",
   },
   {
     headline: "500+ Installations",

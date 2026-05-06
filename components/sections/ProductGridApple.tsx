@@ -9,7 +9,6 @@ import { productsData } from "@/lib/products-data";
 type ProductTileConfig = {
   id:
     | "cashguard-core"
-    | "cashguard-premium"
     | "cashprotect-touch"
     | "cashprotect-fusion"
     | "cashmag-mini"
@@ -17,6 +16,7 @@ type ProductTileConfig = {
   title: string;
   explainer: string;
   categories: [string, string, string];
+  price: string;
 };
 
 const productGridData: ProductTileConfig[] = [
@@ -25,20 +25,7 @@ const productGridData: ProductTileConfig[] = [
     title: "CashGuard Core",
     explainer: "High-speed automated cash handling for busy retail checkouts.",
     categories: ["Supermarkets", "Convenience Stores", "High-Volume Retail"],
-  },
-  {
-    id: "cashguard-premium",
-    title: "CashGuard Premium",
-    explainer:
-      "A larger-capacity solution for demanding front-end retail environments.",
-    categories: ["Supermarkets", "Forecourts", "High-Volume Retail"],
-  },
-  {
-    id: "cashprotect-touch",
-    title: "CashProtect Touch",
-    explainer:
-      "Compact automated cash handling for faster service, tighter control, and smaller counter footprints.",
-    categories: ["Pharmacies", "Compact Counters", "Convenience Stores"],
+    price: "€12K",
   },
   {
     id: "cashprotect-fusion",
@@ -46,13 +33,15 @@ const productGridData: ProductTileConfig[] = [
     explainer:
       "A compact automated solution for smaller counters and tighter spaces.",
     categories: ["Pharmacies", "Compact Counters", "Convenience Stores"],
+    price: "€10K",
   },
   {
-    id: "cashmag-mini",
-    title: "CashMag Mini",
+    id: "cashprotect-touch",
+    title: "CashProtect Touch",
     explainer:
-      "Slim, space-saving cash automation for customer-facing service points.",
-    categories: ["Hospitality", "Restaurants", "Pharmacies"],
+      "Compact automated cash handling for faster service, tighter control, and smaller counter footprints.",
+    categories: ["Pharmacies", "Compact Counters", "Convenience Stores"],
+    price: "€9K",
   },
   {
     id: "cashguard-uni",
@@ -60,6 +49,15 @@ const productGridData: ProductTileConfig[] = [
     explainer:
       "Flexible automated cash handling for compact hospitality and retail setups.",
     categories: ["Hospitality", "Restaurants", "Pharmacies"],
+    price: "€7.5K",
+  },
+  {
+    id: "cashmag-mini",
+    title: "CashMag Mini",
+    explainer:
+      "Slim, space-saving cash automation for customer-facing service points.",
+    categories: ["Hospitality", "Restaurants", "Pharmacies"],
+    price: "€7.5K",
   },
 ];
 
@@ -98,11 +96,11 @@ export function ProductGridApple() {
             Built for busy tills.
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl lg:text-6xl">
-            POS hardware that works{" "}
+            Cash Management Solutions that keep your{" "}
             <span className="bg-gradient-to-r from-[#ff6f6f] via-[#e63333] to-[#a3151b] bg-clip-text text-transparent">
-              beautifully
-            </span>{" "}
-            under pressure.
+              cash under control
+            </span>
+            .
           </h2>
         </div>
 
@@ -135,12 +133,17 @@ export function ProductGridApple() {
               </div>
 
               <div className="relative z-10 mt-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-zinc-900">
-                  {product.titleBase}{" "}
-                  <span className="bg-gradient-to-r from-[#ff6f6f] via-[#e63333] to-[#a3151b] bg-clip-text text-transparent">
-                    {product.titleAccent}
+                <div className="flex items-baseline justify-between gap-4">
+                  <h3 className="text-2xl font-semibold tracking-tight text-zinc-900">
+                    {product.titleBase}{" "}
+                    <span className="bg-gradient-to-r from-[#ff6f6f] via-[#e63333] to-[#a3151b] bg-clip-text text-transparent">
+                      {product.titleAccent}
+                    </span>
+                  </h3>
+                  <span className="text-lg font-semibold tracking-tight text-zinc-900">
+                    {product.price}
                   </span>
-                </h3>
+                </div>
                 <p className="mt-2 text-sm text-zinc-600">{product.explainer}</p>
 
                 <div className="mt-4 flex flex-wrap gap-2">

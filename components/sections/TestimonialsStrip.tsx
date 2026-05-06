@@ -35,7 +35,15 @@ export function TestimonialsStrip() {
         </Link>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div
+        className={
+          testimonials.length === 1
+            ? "mx-auto max-w-3xl"
+            : testimonials.length === 2
+            ? "grid gap-6 md:grid-cols-2"
+            : "grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        }
+      >
         {testimonials.map((t, i) => (
           <motion.blockquote
             key={i}
@@ -43,10 +51,15 @@ export function TestimonialsStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: i * 0.08 }}
-            className="relative rounded-xl border border-border bg-bg p-6 shadow-sm"
+            className="relative rounded-xl border border-border bg-bg p-6 shadow-sm md:p-8"
           >
-            <Quote className="absolute right-5 top-5 h-6 w-6 text-accent/20" />
-            <p className="text-[0.95rem] leading-relaxed text-text">{t.quote}</p>
+            <Quote
+              className="absolute right-5 top-5 h-8 w-8 text-accent/15"
+              aria-hidden
+            />
+            <p className="pr-12 text-[0.95rem] leading-relaxed text-text md:text-base">
+              {t.quote}
+            </p>
             <footer className="mt-5 border-t border-border pt-4">
               <p className="text-sm font-semibold text-text">{t.author}</p>
               <p className="text-xs text-muted">

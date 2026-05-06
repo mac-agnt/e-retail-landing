@@ -9,9 +9,27 @@ import { Footer } from "@/components/footer";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { GridBg } from "@/components/ornaments/grid-bg";
-import { BeveledPanel } from "@/components/beveled-panel";
 
-const caseStudies = [
+type Testimonial = {
+  quote: string;
+  author: string;
+  company: string;
+};
+
+type CaseStudy = {
+  id: string;
+  title: string;
+  industry: string;
+  location: string;
+  product: string;
+  image: string;
+  challenge: string;
+  solution: string;
+  testimonial?: Testimonial;
+  placeholder?: boolean;
+};
+
+const caseStudies: CaseStudy[] = [
   {
     id: "supermacs",
     title: "Supermacs",
@@ -21,12 +39,6 @@ const caseStudies = [
     image: "/images/cashprotect-fusion.png",
     challenge: "Supermacs needed to strengthen cash security, reduce manual float management, and give their Financial Controller real-time visibility of cash levels across their busy QSR locations.",
     solution: "Two CashProtect Fusion machines were deployed, automating cash counting and eliminating manual floats. The system integrates directly into their operations, providing real-time cash level reporting and full staff accountability.",
-    results: [
-      { metric: "Reduced", label: "Cash-handling errors" },
-      { metric: "Eliminated", label: "Manual float management" },
-      { metric: "Real-time", label: "Visibility of cash levels" },
-      { metric: "Improved", label: "Staff focus on customer service" },
-    ],
     testimonial: {
       quote: "We recently purchased two CashProtect Fusion machines from Cash Guard, and they have already proven to be a valuable asset to our Supermacs business. Their implementation has strengthened our security measures, improved operational efficiency, and significantly reduced cash-handling errors. By automating cash counting, removing the need for manual floats, and providing real-time visibility of cash levels, the Fusion system has enabled us to streamline our cash-handling processes and allow staff to dedicate more time to customer service. As Financial Controller, the enhanced control and transparency provided by the Fusion gives me real peace of mind in the management of our business operations.",
       author: "John Haughey, Financial Controller",
@@ -34,67 +46,59 @@ const caseStudies = [
     },
   },
   {
-    id: "supermarket-chain",
-    title: "National Supermarket Chain",
-    industry: "Retail",
-    location: "Nationwide, Ireland",
-    product: "CashGuard Premium",
-    image: "/images/cashguard-premium.png",
-    challenge: "A leading Irish supermarket chain with 45 locations was experiencing significant cash discrepancies, averaging €2,000 per store monthly. End-of-day reconciliation was taking staff over 45 minutes per lane.",
-    solution: "We deployed CashGuard Premium units across all checkout lanes in their busiest 20 stores, with full POS integration and centralized reporting.",
-    results: [
-      { metric: "98%", label: "Reduction in cash discrepancies" },
-      { metric: "35 min", label: "Saved per lane daily on reconciliation" },
-      { metric: "€480K", label: "Annual savings across all stores" },
-      { metric: "6 months", label: "Full ROI achieved" },
-    ],
-    testimonial: {
-      quote: "The CashGuard system has transformed our cash handling operations. Our staff love how simple it is, and our finance team finally has accurate real-time data.",
-      author: "Operations Director",
-      company: "National Supermarket Chain",
-    },
+    id: "aran-bakeries",
+    title: "Aran Bakeries",
+    industry: "Bakery",
+    location: "Ireland",
+    product: "CashGuard Uni",
+    image: "/images/cashguard-uni.png",
+    challenge: "Case study coming soon — interview pending.",
+    solution: "Details coming soon.",
+    placeholder: true,
   },
   {
-    id: "pharmacy-group",
-    title: "Independent Pharmacy Group",
-    industry: "Healthcare Retail",
-    location: "Dublin & Cork",
+    id: "vegetable-store",
+    title: "Vegetable Store",
+    industry: "Greengrocer",
+    location: "Ireland",
+    product: "CashProtect Touch",
+    image: "/images/cashprotect-touch.png",
+    challenge: "Case study coming soon — interview pending.",
+    solution: "Details coming soon.",
+    placeholder: true,
+  },
+  {
+    id: "centra-scallys",
+    title: "CENTRA Scallys, Summerhill",
+    industry: "Convenience",
+    location: "Ireland",
+    product: "CashGuard Core",
+    image: "/images/cashguard-core.png",
+    challenge: "Case study coming soon — interview pending.",
+    solution: "Details coming soon.",
+    placeholder: true,
+  },
+  {
+    id: "spar-aran",
+    title: "SPAR Aran Islands",
+    industry: "Convenience",
+    location: "Ireland",
+    product: "CashGuard Core",
+    image: "/images/cashguard-core.png",
+    challenge: "Case study coming soon — interview pending.",
+    solution: "Details coming soon.",
+    placeholder: true,
+  },
+  {
+    id: "opw",
+    title: "OPW",
+    industry: "Public Sector",
+    location: "Ireland",
     product: "CashMag Mini",
     image: "/images/cashmag-mini.png",
-    challenge: "A group of 8 pharmacies needed a cash management solution that wouldn't take up valuable counter space. Staff were spending too much time on cash handling instead of customer care.",
-    solution: "The compact CashMag Mini was perfect for their limited counter space. We installed units at each location with training completed in under 2 hours per store.",
-    results: [
-      { metric: "100%", label: "Counter space preserved" },
-      { metric: "20 sec", label: "Faster per transaction" },
-      { metric: "Zero", label: "Cash discrepancies since install" },
-      { metric: "2 hours", label: "Staff training time" },
-    ],
-    testimonial: {
-      quote: "We were worried about finding space for a cash machine, but the CashMag Mini fits perfectly. It's been running flawlessly for over a year now.",
-      author: "Pharmacy Owner",
-      company: "Independent Pharmacy Group",
-    },
-  },
-  {
-    id: "hotel-restaurant",
-    title: "Boutique Hotel & Restaurant",
-    industry: "Hospitality",
-    location: "Galway",
-    product: "CashProtect Fusion",
-    image: "/images/cashprotect-fusion.png",
-    challenge: "A busy hotel restaurant was struggling with cash security during peak service times. Multiple staff accessing the till led to accountability issues and occasional shortages.",
-    solution: "CashProtect Fusion provided secure, user-authenticated cash handling with individual staff accountability and drop-box collection for shift changes.",
-    results: [
-      { metric: "100%", label: "Staff accountability" },
-      { metric: "€0", label: "Cash shortages since install" },
-      { metric: "15 min", label: "Shift handover time (was 45 min)" },
-      { metric: "4.9★", label: "Staff satisfaction rating" },
-    ],
-    testimonial: {
-      quote: "The user authentication feature means every transaction is tracked to the individual. It's given us complete peace of mind and our staff appreciate the clarity.",
-      author: "Hotel Manager",
-      company: "Boutique Hotel & Restaurant",
-    },
+    challenge: "Case study coming soon — interview pending.",
+    solution: "Details coming soon.",
+    placeholder: true,
   },
 ];
 
@@ -108,7 +112,7 @@ export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen bg-bg">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <GridBg />
@@ -178,59 +182,73 @@ export default function CaseStudiesPage() {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Left - Image & Product */}
-              <div>
-                <div className="relative aspect-video mb-6 rounded-lg overflow-hidden bg-panel">
-                  <Image
-                    src={study.image}
-                    alt={study.product}
-                    fill
-                    className="object-contain p-8"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="text-sm text-muted">
-                  Product used: <span className="text-accent-gradient font-semibold">{study.product}</span>
-                </div>
-              </div>
-
-              {/* Right - Challenge & Solution */}
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-text mb-3">The Challenge</h3>
-                  <p className="text-muted">{study.challenge}</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-text mb-3">Our Solution</h3>
-                  <p className="text-muted">{study.solution}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Results Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-              {study.results.map((result, i) => (
-                <BeveledPanel key={i} className="p-6 text-center">
-                  <div className="text-3xl font-bold text-accent-gradient mb-1">
-                    {result.metric}
+            {study.placeholder ? (
+              <div className="rounded-lg border border-border bg-panel/40 p-8">
+                <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] gap-8 items-center">
+                  <div className="relative aspect-video rounded-lg overflow-hidden bg-panel">
+                    <Image
+                      src={study.image}
+                      alt={study.product}
+                      fill
+                      className="object-contain p-8"
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                    />
                   </div>
-                  <div className="text-sm text-muted">{result.label}</div>
-                </BeveledPanel>
-              ))}
-            </div>
-
-            {/* Testimonial */}
-            <div className="mt-12 p-8 bg-panel rounded-lg border border-border relative">
-              <Quote className="absolute top-6 left-6 h-8 w-8 text-accent/20" />
-              <blockquote className="text-lg text-text italic mb-4 pl-8">
-                "{study.testimonial.quote}"
-              </blockquote>
-              <div className="pl-8">
-                <div className="font-semibold text-text">{study.testimonial.author}</div>
-                <div className="text-sm text-muted">{study.testimonial.company}</div>
+                  <div className="space-y-3">
+                    <div className="text-sm text-muted">
+                      Product: <span className="text-accent-gradient font-semibold">{study.product}</span>
+                    </div>
+                    <p className="text-muted italic">Case study coming soon — full write-up and on-site video pending.</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              <>
+                <div className="grid lg:grid-cols-2 gap-12">
+                  {/* Left - Image & Product */}
+                  <div>
+                    <div className="relative aspect-video mb-6 rounded-lg overflow-hidden bg-panel">
+                      <Image
+                        src={study.image}
+                        alt={study.product}
+                        fill
+                        className="object-contain p-8"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                    <div className="text-sm text-muted">
+                      Product used: <span className="text-accent-gradient font-semibold">{study.product}</span>
+                    </div>
+                  </div>
+
+                  {/* Right - Challenge & Solution */}
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-lg font-semibold text-text mb-3">The Challenge</h3>
+                      <p className="text-muted">{study.challenge}</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-text mb-3">Our Solution</h3>
+                      <p className="text-muted">{study.solution}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Testimonial */}
+                {study.testimonial && (
+                  <div className="mt-12 p-8 bg-panel rounded-lg border border-border relative">
+                    <Quote className="absolute top-6 left-6 h-8 w-8 text-accent/20" />
+                    <blockquote className="text-lg text-text italic mb-4 pl-8">
+                      &ldquo;{study.testimonial.quote}&rdquo;
+                    </blockquote>
+                    <div className="pl-8">
+                      <div className="font-semibold text-text">{study.testimonial.author}</div>
+                      <div className="text-sm text-muted">{study.testimonial.company}</div>
+                    </div>
+                  </div>
+                )}
+              </>
+            )}
           </motion.div>
         </Section>
       ))}
