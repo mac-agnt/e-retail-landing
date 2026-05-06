@@ -159,6 +159,13 @@ FUSION is the latest launch of the entire e-Retail range, designed for cashier e
     manufacturer: "e-Retail",
     manufacturerNote: "E-Retail has deployed multiple installations across different sectors in Ireland, including petrol stations, supermarkets, convenience stores, hospitality venues, pharmacies, and various other sectors.",
     relatedProducts: ["cashmag-mini", "cashguard-uni"],
+    writtenTestimonials: [
+      {
+        quote:
+          "We recently purchased two CashProtect Fusion machines from Cash Guard, and they have already proven to be a valuable asset to our Supermacs business. Their implementation has strengthened our security measures, improved operational efficiency, and significantly reduced cash-handling errors. By automating cash counting, removing the need for manual floats, and providing real-time visibility of cash levels, the Fusion system has enabled us to streamline our cash-handling processes and allow staff to dedicate more time to customer service. As Financial Controller, the enhanced control and transparency provided by the Fusion gives me real peace of mind in the management of our business operations.",
+        roleLine: "John Haughey, Financial Controller — Supermacs",
+      },
+    ],
   },
   "cashmag-mini": {
     id: "cashmag-mini",

@@ -5,6 +5,7 @@ import { HeroSlideshow } from "@/components/hero-slideshow";
 import { WhoWeHelp } from "@/components/who-we-help";
 import { ProductGridApple } from "@/components/sections/ProductGridApple";
 import { SupportSection } from "@/components/sections/SupportSection";
+import { TestimonialsStrip } from "@/components/sections/TestimonialsStrip";
 import { KpiStrip } from "@/components/kpi-strip";
 import { Footer } from "@/components/footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
         <HeroSlideshow />
         <WhoWeHelp />
         <ProductGridApple />
+        <TestimonialsStrip />
         <SupportSection />
         <KpiStrip />
       </main>

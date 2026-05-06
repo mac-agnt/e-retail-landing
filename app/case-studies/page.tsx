@@ -13,6 +13,27 @@ import { BeveledPanel } from "@/components/beveled-panel";
 
 const caseStudies = [
   {
+    id: "supermacs",
+    title: "Supermacs",
+    industry: "Quick Service Restaurant",
+    location: "Ireland",
+    product: "CashProtect Fusion",
+    image: "/images/cashprotect-fusion.png",
+    challenge: "Supermacs needed to strengthen cash security, reduce manual float management, and give their Financial Controller real-time visibility of cash levels across their busy QSR locations.",
+    solution: "Two CashProtect Fusion machines were deployed, automating cash counting and eliminating manual floats. The system integrates directly into their operations, providing real-time cash level reporting and full staff accountability.",
+    results: [
+      { metric: "Reduced", label: "Cash-handling errors" },
+      { metric: "Eliminated", label: "Manual float management" },
+      { metric: "Real-time", label: "Visibility of cash levels" },
+      { metric: "Improved", label: "Staff focus on customer service" },
+    ],
+    testimonial: {
+      quote: "We recently purchased two CashProtect Fusion machines from Cash Guard, and they have already proven to be a valuable asset to our Supermacs business. Their implementation has strengthened our security measures, improved operational efficiency, and significantly reduced cash-handling errors. By automating cash counting, removing the need for manual floats, and providing real-time visibility of cash levels, the Fusion system has enabled us to streamline our cash-handling processes and allow staff to dedicate more time to customer service. As Financial Controller, the enhanced control and transparency provided by the Fusion gives me real peace of mind in the management of our business operations.",
+      author: "John Haughey, Financial Controller",
+      company: "Supermacs",
+    },
+  },
+  {
     id: "supermarket-chain",
     title: "National Supermarket Chain",
     industry: "Retail",
